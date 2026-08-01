@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Clube fechado por convite para amadores de beach tennis, padel, squash e pickleball. Entre na sua tribo e jogue mais.",
+          "Organize partidas de beach tennis, padel, squash e pickleball com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },

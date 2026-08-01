@@ -81,18 +81,22 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Clube fechado para organizar partidas de beach tennis, padel, squash e pickleball com segurança, tribos por convite e chat interno.",
+          "Organize partidas de beach tennis, padel, squash e pickleball com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
       },
       { name: "author", content: "Dekaw" },
       { property: "og:title", content: "DEKAW — Você Dono da Bola" },
       {
         property: "og:description",
         content:
-          "Entre na sua tribo e nunca mais fique sem com quem jogar. Beach tennis, padel, squash e pickleball.",
+          "Organize partidas de beach tennis, padel, squash e pickleball com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "DEKAW — Você Dono da Bola" },
+      { name: "twitter:description", content: "Organize partidas de beach tennis, padel, squash e pickleball com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7dc2dd2-0b5b-4a13-9f8b-a284a36d41d6/id-preview-881c48ef--69757e71-a7cf-48c2-8af8-3bf1ecfc2f5f.lovable.app-1785549214907.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7dc2dd2-0b5b-4a13-9f8b-a284a36d41d6/id-preview-881c48ef--69757e71-a7cf-48c2-8af8-3bf1ecfc2f5f.lovable.app-1785549214907.png" },
     ],
     links: [
       {
@@ -105,7 +109,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
