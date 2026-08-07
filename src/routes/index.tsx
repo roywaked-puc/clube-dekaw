@@ -16,7 +16,7 @@ const CTA = "https://app.dekaw.com.br/";
 
 /*
  * VARIAÇÕES DE HEADLINE DO HERO
- * (1) USADA: "Nunca mais fique sem com quem jogar."
+ * (1) USADA: "Nunca mais fique sem ter com quem jogar."
  * (2) Alternativa: "Seu clube de raquete começa na sua tribo."
  * (3) Alternativa: "Você dono da bola: chame a tribo, marque o jogo, entre em quadra."
  */
