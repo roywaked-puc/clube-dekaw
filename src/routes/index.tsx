@@ -12,7 +12,7 @@ import {
   IconTrofeu,
 } from "@/components/dekaw/icons";
 
-const CTA = "https://comunidadedekaw.lovable.app/splash";
+const CTA = "https://app.dekaw.com.br/";
 
 /*
  * VARIAÇÕES DE HEADLINE DO HERO
@@ -76,15 +76,7 @@ function Eyebrow({ children }: { children: React.ReactNode }) {
   );
 }
 
-function Section({
-  children,
-  className = "",
-  id,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
-}) {
+function Section({ children, className = "", id }: { children: React.ReactNode; className?: string; id?: string }) {
   return (
     <section id={id} className={`px-5 py-20 md:px-8 md:py-28 ${className}`}>
       <div className="mx-auto w-full max-w-6xl">{children}</div>
@@ -100,12 +92,8 @@ function Index() {
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-4 md:px-8">
           <div className="flex items-center gap-2">
             <IconRaquete className="h-7 w-7 text-primary" />
-            <span className="font-display text-lg font-extrabold tracking-tight">
-              DEKAW
-            </span>
-            <span className="hidden text-xs font-medium text-muted-foreground sm:inline">
-              você dono da bola
-            </span>
+            <span className="font-display text-lg font-extrabold tracking-tight">DEKAW</span>
+            <span className="hidden text-xs font-medium text-muted-foreground sm:inline">você dono da bola</span>
           </div>
           <Cta className="px-5 py-2.5 text-xs">Entrar no clube</Cta>
         </div>
@@ -121,10 +109,9 @@ function Index() {
               <span className="text-gradient-primary"> com quem jogar.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              O Dekaw é o clube digital onde amadores de beach tennis, padel, squash e
-              pickleball se organizam em tribos. Você entra convidado por alguém que já
-              está dentro, encontra parceiros do seu nível e marca o jogo pelo chat — sem
-              precisar sair pedindo telefone para desconhecido.
+              O Dekaw é o clube digital onde amadores de beach tennis, padel, squash e pickleball se organizam em
+              tribos. Você entra convidado por alguém que já está dentro, encontra parceiros do seu nível e marca o jogo
+              pelo chat — sem precisar sair pedindo telefone para desconhecido.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <Cta>Quero entrar na minha tribo</Cta>
@@ -157,8 +144,8 @@ function Index() {
             A raquete está no carro. O que falta é o jogo.
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Quem joga esporte de raquete conhece a rotina: grupo de mensagem lotado,
-            ninguém confirma, quadra reservada e alguém desiste na última hora.
+            Quem joga esporte de raquete conhece a rotina: grupo de mensagem lotado, ninguém confirma, quadra reservada
+            e alguém desiste na última hora.
           </p>
         </div>
         <div className="mt-10 grid gap-5 md:grid-cols-3">
@@ -200,8 +187,8 @@ function Index() {
               Um clube onde todo mundo tem nome, referência e vontade de jogar.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              O Dekaw não é mais um app de agenda. É a sua tribo organizada: gente
-              apresentada por gente, conversa no lugar certo e jogo marcado em minutos.
+              O Dekaw não é mais um app de agenda. É a sua tribo organizada: gente apresentada por gente, conversa no
+              lugar certo e jogo marcado em minutos.
             </p>
             <ul className="mt-8 space-y-4">
               {[
@@ -222,15 +209,24 @@ function Index() {
           </div>
           <div className="grid gap-5 sm:grid-cols-2">
             {[
-              { i: <IconTribo className="h-9 w-9 text-primary" />, t: "Tribos", d: "Seu círculo de jogo, sempre com referência." },
+              {
+                i: <IconTribo className="h-9 w-9 text-primary" />,
+                t: "Tribos",
+                d: "Seu círculo de jogo, sempre com referência.",
+              },
               { i: <IconChat className="h-9 w-9 text-primary" />, t: "Chat seguro", d: "Combine tudo dentro do app." },
-              { i: <IconTrofeu className="h-9 w-9 text-primary" />, t: "Ranking", d: "Pontos e prêmios a cada período." },
-              { i: <IconQuadra className="h-9 w-9 text-primary" />, t: "Quadras", d: "Horários livres na mão de quem joga." },
+              {
+                i: <IconTrofeu className="h-9 w-9 text-primary" />,
+                t: "Ranking",
+                d: "Pontos e prêmios a cada período.",
+              },
+              {
+                i: <IconQuadra className="h-9 w-9 text-primary" />,
+                t: "Quadras",
+                d: "Horários livres na mão de quem joga.",
+              },
             ].map((c) => (
-              <div
-                key={c.t}
-                className="rounded-3xl border border-primary/15 bg-card p-6 shadow-soft"
-              >
+              <div key={c.t} className="rounded-3xl border border-primary/15 bg-card p-6 shadow-soft">
                 {c.i}
                 <h3 className="mt-4 font-bold">{c.t}</h3>
                 <p className="mt-1 text-sm text-muted-foreground">{c.d}</p>
@@ -270,9 +266,7 @@ function Index() {
             },
           ].map((s) => (
             <li key={s.n} className="relative rounded-3xl border border-border bg-card p-7">
-              <span className="font-display text-5xl font-extrabold text-primary/15">
-                {s.n}
-              </span>
+              <span className="font-display text-5xl font-extrabold text-primary/15">{s.n}</span>
               <div className="mt-2">{s.i}</div>
               <h3 className="mt-4 text-lg font-bold">{s.t}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.d}</p>
@@ -313,10 +307,7 @@ function Index() {
               cta: "Entrar como dono de quadra",
             },
           ].map((c) => (
-            <article
-              key={c.t}
-              className="flex flex-col rounded-3xl border border-primary/15 bg-card p-7 shadow-soft"
-            >
+            <article key={c.t} className="flex flex-col rounded-3xl border border-primary/15 bg-card p-7 shadow-soft">
               {c.i}
               <h3 className="mt-5 text-xl font-bold">{c.t}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{c.d}</p>
@@ -359,15 +350,11 @@ function Index() {
                     {nome}
                   </span>
                   <span className="text-sm text-muted-foreground">{pts}</span>
-                  <span className="w-full text-xs font-medium text-accent-foreground sm:w-auto">
-                    {premio}
-                  </span>
+                  <span className="w-full text-xs font-medium text-accent-foreground sm:w-auto">{premio}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-xs text-muted-foreground">
-              Exemplo ilustrativo de ranking (dados fictícios).
-            </p>
+            <p className="mt-4 text-xs text-muted-foreground">Exemplo ilustrativo de ranking (dados fictícios).</p>
           </div>
           <div className="order-1 md:order-2">
             <Eyebrow>Gamificação</Eyebrow>
@@ -375,8 +362,8 @@ function Index() {
               Quem move a tribo <span className="text-gradient-primary">ganha por isso.</span>
             </h2>
             <p className="mt-4 text-muted-foreground">
-              Cada ação que faz o clube girar vale ponto. No fim do período, os 3 primeiros
-              colocados levam descontos ou brindes da Dekaw.
+              Cada ação que faz o clube girar vale ponto. No fim do período, os 3 primeiros colocados levam descontos ou
+              brindes da Dekaw.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {[
@@ -401,9 +388,7 @@ function Index() {
       <Section className="surface-soft">
         <div className="max-w-2xl">
           <Eyebrow>A tribo fala</Eyebrow>
-          <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">
-            Gente jogando mais, quadra mais cheia.
-          </h2>
+          <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">Gente jogando mais, quadra mais cheia.</h2>
           <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Placeholder: números e depoimentos fictícios — substituir por dados reais
           </p>
@@ -453,11 +438,10 @@ function Index() {
               O clube é da tribo. A loja está aqui quando a raquete pedir.
             </h2>
             <p className="mt-4 text-muted-foreground">
-              O Dekaw nasceu dentro da loja Dekaw, revendedora Head para beach tennis,
-              padel, squash e pickleball. Por isso o app é e continua gratuito: quem joga
-              mais evolui mais, e quando chega a hora de trocar a raquete, o overgrip ou a
-              bolsa, você já sabe quem entende do seu jogo — com condições especiais para a
-              tribo e prêmios do ranking saindo direto da loja.
+              O Dekaw nasceu dentro da loja Dekaw, revendedora Head para beach tennis, padel, squash e pickleball. Por
+              isso o app é e continua gratuito: quem joga mais evolui mais, e quando chega a hora de trocar a raquete, o
+              overgrip ou a bolsa, você já sabe quem entende do seu jogo — com condições especiais para a tribo e
+              prêmios do ranking saindo direto da loja.
             </p>
           </div>
         </div>
@@ -472,9 +456,8 @@ function Index() {
             <span className="text-gradient-primary"> Falta você em quadra.</span>
           </h2>
           <p className="mt-5 text-muted-foreground">
-            O Dekaw não é aberto para todo mundo: cada membro entra referenciado por quem já
-            está dentro. Se você recebeu um convite, ele é a sua porta de entrada — e o
-            começo dos seus próximos jogos.
+            O Dekaw não é aberto para todo mundo: cada membro entra referenciado por quem já está dentro. Se você
+            recebeu um convite, ele é a sua porta de entrada — e o começo dos seus próximos jogos.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <Cta className="px-9 py-4 text-base">Acessar meu convite</Cta>
