@@ -105,7 +105,7 @@ function Index() {
           <div>
             <Eyebrow>Clube fechado · só por convite</Eyebrow>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] md:text-6xl">
-              Nunca mais fique sem
+              Nunca mais fique sem ter
               <span className="text-gradient-primary"> com quem jogar.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
