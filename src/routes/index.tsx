@@ -416,6 +416,14 @@ function Index() {
               overgrip ou a bolsa, você já sabe quem entende do seu jogo — com condições especiais para a tribo e
               prêmios do ranking saindo direto da loja.
             </p>
+            <a
+              href="https://dekaw.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 px-6 py-3 text-sm font-semibold tracking-wide text-primary transition-all duration-300 hover:bg-accent"
+            >
+              Conhecer a loja Dekaw <span aria-hidden="true">→</span>
+            </a>
           </div>
         </div>
       </Section>
