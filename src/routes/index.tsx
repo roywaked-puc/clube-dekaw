@@ -458,20 +458,19 @@ function Index() {
             <span className="font-display font-bold text-foreground">DEKAW</span>
             <span>· você dono da bola</span>
           </div>
-          <div className="flex items-center gap-3">
-            <a href={CTA} className="font-semibold text-primary hover:underline">
-              clube.dekaw.com.br
-            </a>
-            <a
-              href="https://instagram.com/dekawoficial"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram DEKAW"
-              className="inline-flex items-center text-[#6B6B6B] transition-colors hover:text-primary"
-            >
-              <Instagram className="h-5 w-5" />
-            </a>
-          </div>
+          <a
+            href="https://instagram.com/dekawoficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram DEKAW"
+            className="inline-flex items-center gap-1.5 text-primary hover:underline"
+          >
+            <Instagram className="h-5 w-5" />
+            <span className="font-medium">@dekawoficial</span>
+          </a>
+          <a href={CTA} className="font-semibold text-primary hover:underline">
+            clube.dekaw.com.br
+          </a>
         </div>
       </footer>
     </main>
