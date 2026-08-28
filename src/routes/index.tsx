@@ -470,7 +470,7 @@ function Index() {
           </a>
           <div className="flex items-center gap-1.5">
             <a href={CTA} className="font-semibold text-primary hover:underline">
-              clube.dekaw.com.br
+              clube dekaw
             </a>
             <span className="text-muted-foreground">·</span>
             <a
