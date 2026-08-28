@@ -468,9 +468,20 @@ function Index() {
             <Instagram className="h-5 w-5" />
             <span className="font-medium">@dekawoficial</span>
           </a>
-          <a href={CTA} className="font-semibold text-primary hover:underline">
-            clube.dekaw.com.br
-          </a>
+          <div className="flex items-center gap-1.5">
+            <a href={CTA} className="font-semibold text-primary hover:underline">
+              clube.dekaw.com.br
+            </a>
+            <span className="text-muted-foreground">·</span>
+            <a
+              href="https://dekaw.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-primary hover:underline"
+            >
+              dekaw.com.br
+            </a>
+          </div>
         </div>
       </footer>
     </main>
