@@ -389,41 +389,16 @@ function Index() {
         <div className="max-w-2xl">
           <Eyebrow>A tribo fala</Eyebrow>
           <h2 className="mt-6 text-3xl font-bold leading-tight md:text-4xl">Gente jogando mais, quadra mais cheia.</h2>
-          <p className="mt-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-            Placeholder: números e depoimentos fictícios — substituir por dados reais
-          </p>
         </div>
-        <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
           {[
-            ["+2.400", "jogadores nas tribos"],
-            ["+8.700", "partidas organizadas"],
-            ["4,8/5", "nota média das partidas"],
-          ].map(([n, l]) => (
-            <div key={n} className="rounded-3xl border border-primary/15 bg-card p-7 text-center">
-              <p className="font-display text-4xl font-extrabold text-primary">{n}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{l}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-6 grid gap-5 md:grid-cols-3">
-          {[
-            [
-              "Entrei convidado por um amigo e em duas semanas já tinha jogo fixo três vezes por semana. Nunca mais fiquei sem dupla.",
-              "Chadi A. · beach tennis · convidado do Roy",
-            ],
-            [
-              "Coloquei meus alunos na tribo e eles começaram a treinar entre si. A evolução acelerou e quase ninguém abandona mais as aulas.",
-              "Marina P. · professora de padel",
-            ],
-            [
-              "Divulgo os horários vagos direto na tribo. Meu período das 14h, que era morto, hoje é o mais disputado.",
-              "Rafael T. · dono de arena",
-            ],
-          ].map(([q, a]) => (
-            <blockquote key={a} className="rounded-3xl border border-border bg-card p-7">
-              <p className="text-sm leading-relaxed">"{q}"</p>
-              <footer className="mt-4 text-xs font-semibold text-primary">{a}</footer>
-            </blockquote>
+            "Convidado por um amigo, virou jogo fixo em duas semanas — nunca mais ficou sem dupla.",
+            "Professor coloca os alunos pra treinarem entre si fora da aula — a evolução acelera e ninguém abandona o esporte.",
+            "Dono de arena divulga o horário vago direto na tribo — o período que era morto vira o mais disputado.",
+          ].map((c) => (
+            <article key={c} className="rounded-3xl border border-border bg-card p-7">
+              <p className="text-sm leading-relaxed">{c}</p>
+            </article>
           ))}
         </div>
       </Section>
