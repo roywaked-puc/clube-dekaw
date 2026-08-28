@@ -1,12 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import {
-  Outlet,
-  Link,
-  createRootRouteWithContext,
-  useRouter,
-  HeadContent,
-  Scripts,
-} from "@tanstack/react-router";
+import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
@@ -44,9 +37,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">This page didn't load</h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Something went wrong on our end. You can try refreshing or head back home.
         </p>
@@ -81,22 +72,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Organize partidas de beach tennis, padel, squash e pickleball com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
+          "Organize partidas de beach tennis, padel, squash, pickleball e tênis com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
       },
       { name: "author", content: "Dekaw" },
       { property: "og:title", content: "DEKAW — Você Dono da Bola" },
       {
         property: "og:description",
         content:
-          "Organize partidas de beach tennis, padel, squash e pickleball com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
+          "Organize partidas de beach tennis, padel, squash, pickleball e tenis com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "DEKAW — Você Dono da Bola" },
-      { name: "twitter:description", content: "Organize partidas de beach tennis, padel, squash e pickleball com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7dc2dd2-0b5b-4a13-9f8b-a284a36d41d6/id-preview-881c48ef--69757e71-a7cf-48c2-8af8-3bf1ecfc2f5f.lovable.app-1785549214907.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7dc2dd2-0b5b-4a13-9f8b-a284a36d41d6/id-preview-881c48ef--69757e71-a7cf-48c2-8af8-3bf1ecfc2f5f.lovable.app-1785549214907.png" },
+      {
+        name: "twitter:description",
+        content:
+          "Organize partidas de beach tennis, padel, squash, pickleball e tênis com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7dc2dd2-0b5b-4a13-9f8b-a284a36d41d6/id-preview-881c48ef--69757e71-a7cf-48c2-8af8-3bf1ecfc2f5f.lovable.app-1785549214907.png",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7dc2dd2-0b5b-4a13-9f8b-a284a36d41d6/id-preview-881c48ef--69757e71-a7cf-48c2-8af8-3bf1ecfc2f5f.lovable.app-1785549214907.png",
+      },
     ],
     links: [
       {
