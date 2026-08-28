@@ -449,7 +449,9 @@ function Index() {
               Entrar no clube
             </Cta>
           </div>
-          <p className="mt-5 text-xs text-muted-foreground">Gratuito · beach tennis · padel · squash · pickleball</p>
+          <p className="mt-5 text-xs text-muted-foreground">
+            Gratuito · beach tennis · padel · squash · pickleball· tênis
+          </p>
         </div>
       </Section>
 
