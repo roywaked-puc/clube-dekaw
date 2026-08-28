@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "Organize partidas de beach tennis, padel, squash, pickleball e tenis com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
+          "Organize partidas de beach tennis, padel, squash, pickleball e tênis com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
