@@ -30,7 +30,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Organize partidas de beach tennis, padel, squash e pickleball com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
+          "Organize partidas de beach tennis, padel, squash, pickleball e tênis com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
       },
       { property: "og:title", content: "DEKAW — Você Dono da Bola" },
       {
