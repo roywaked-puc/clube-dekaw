@@ -474,7 +474,7 @@ function Index() {
             </a>
             <span className="text-muted-foreground">·</span>
             <a
-              href="https://dekaw.com.br"
+              href="https://www.dekaw.com.br"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-primary hover:underline"
