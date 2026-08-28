@@ -118,7 +118,9 @@ function Index() {
               <Cta>Quero entrar na minha tribo</Cta>
               <Cta variant="ghost">Ver como funciona</Cta>
             </div>
-            <p className="mt-5 text-xs text-muted-foreground">Gratuito · beach tennis, padel, squash e pickleball</p>
+            <p className="mt-5 text-xs text-muted-foreground">
+              Gratuito · beach tennis, padel, squash, pickleball e tênis
+            </p>
           </div>
           <div className="relative">
             <div className="absolute -inset-6 rounded-[2.5rem] bg-primary/5 blur-2xl" />
