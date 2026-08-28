@@ -479,7 +479,7 @@ function Index() {
               rel="noopener noreferrer"
               className="font-semibold text-primary hover:underline"
             >
-              dekaw.com.br
+              loja dekaw
             </a>
           </div>
         </div>
