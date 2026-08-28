@@ -110,7 +110,7 @@ function Index() {
               <span className="text-gradient-primary"> com quem jogar.</span>
             </h1>
             <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              O Dekaw é o clube digital onde amadores de beach tennis, padel, squash e pickleball se organizam em
+              O Dekaw é o clube digital onde amadores de beach tennis, padel, squash, pickleball e tênis se organizam em
               tribos. Você entra convidado por alguém que já está dentro, encontra parceiros do seu nível e marca o jogo
               pelo chat — sem precisar sair pedindo telefone para desconhecido.
             </p>
