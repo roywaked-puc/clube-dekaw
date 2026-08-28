@@ -417,7 +417,7 @@ function Index() {
               prêmios do ranking saindo direto da loja.
             </p>
             <a
-              href="https://dekaw.com.br"
+              href="https://www.dekaw.com.br"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex items-center justify-center gap-2 rounded-full border border-primary/30 px-6 py-3 text-sm font-semibold tracking-wide text-primary transition-all duration-300 hover:bg-accent"
