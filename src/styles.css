@@ -83,12 +83,17 @@
   --muted-foreground: oklch(0.5 0.03 152);
   --accent: oklch(0.955 0.035 152);
   --accent-foreground: oklch(0.35 0.1 152);
-  --gradient-primary: linear-gradient(135deg, var(--primary-deep), var(--primary) 55%, var(--primary-glow));
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--primary-deep),
+    var(--primary) 55%,
+    var(--primary-glow)
+  );
   --gradient-soft: linear-gradient(180deg, color-mix(in oklab, var(--primary) 8%, white), white);
   --shadow-soft: 0 10px 30px -12px color-mix(in oklab, var(--primary) 35%, transparent);
   --shadow-lift: 0 22px 50px -18px color-mix(in oklab, var(--primary) 45%, transparent);
-  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.92 0.02 152);
@@ -155,7 +160,10 @@
     font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
@@ -182,4 +190,56 @@
 
 @utility bg-gradient-primary {
   background: var(--gradient-primary);
+}
+
+/*
+ * Landing v2 (src/routes/index.tsx).
+ * A página usa estilo inline; aqui ficam só hover, foco e o menu no celular.
+ * Cores fixas da marca DEKAW: #00A850 (verde), #004D25 (verde escuro),
+ * #8BE3B0 (verde claro pra texto pequeno sobre o verde escuro).
+ */
+html {
+  scroll-behavior: smooth;
+}
+
+.btn {
+  transition:
+    filter 0.15s ease,
+    transform 0.15s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.navlink:hover {
+  color: #8be3b0 !important;
+}
+
+a:focus-visible {
+  outline: 3px solid #004d25;
+  outline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .nav-links {
+    display: none !important;
+  }
+}
+
+header a {
+  white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+  .court-decor {
+    display: none !important;
+  }
+}
+
+@media (max-width: 440px) {
+  .brand-sub {
+    display: none !important;
+  }
 }
