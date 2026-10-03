@@ -193,10 +193,10 @@
 }
 
 /*
- * Landing v2 (src/routes/index.tsx).
- * A página usa estilo inline; aqui ficam só hover, foco e o menu no celular.
- * Cores fixas da marca DEKAW: #00A850 (verde), #004D25 (verde escuro),
- * #8BE3B0 (verde claro pra texto pequeno sobre o verde escuro).
+ * Landing v3 (src/routes/index.tsx).
+ * A página usa estilo inline; aqui ficam só hover, foco e ajustes de celular.
+ * Cores fixas da marca DEKAW: #00A850 (verde, o mesmo do app), #006B33 (verde
+ * pra texto pequeno), #EEF9F2 (fundo verde-claro).
  */
 html {
   scroll-behavior: smooth;
@@ -205,27 +205,22 @@ html {
 .btn {
   transition:
     filter 0.15s ease,
-    transform 0.15s ease;
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
 }
 
 .btn:hover {
-  filter: brightness(1.08);
+  filter: brightness(1.06);
   transform: translateY(-1px);
 }
 
 .navlink:hover {
-  color: #8be3b0 !important;
+  color: #00a850 !important;
 }
 
 a:focus-visible {
-  outline: 3px solid #004d25;
+  outline: 3px solid #00a850;
   outline-offset: 3px;
-}
-
-@media (max-width: 860px) {
-  .nav-links {
-    display: none !important;
-  }
 }
 
 header a {
@@ -233,13 +228,20 @@ header a {
 }
 
 @media (max-width: 860px) {
-  .court-decor {
+  .nav-links,
+  .decor {
     display: none !important;
   }
 }
 
-@media (max-width: 440px) {
-  .brand-sub {
+@media (max-width: 480px) {
+  .hdr-logo {
+    height: 40px !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .hdr-entrar {
     display: none !important;
   }
 }
