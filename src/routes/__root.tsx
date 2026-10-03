@@ -84,7 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Organize jogos de beach tennis, padel, squash, pickleball e tênis com a sua tribo. Você chama a galera e o jogo acontece. Grátis e sem anúncios.",
       },
       { name: "author", content: "DEKAW" },
-      { name: "theme-color", content: "#00A850" },
+      { name: "theme-color", content: "#00AB84" },
       { property: "og:site_name", content: "DEKAW · Donos da Bola" },
       { property: "og:locale", content: "pt_BR" },
     ],

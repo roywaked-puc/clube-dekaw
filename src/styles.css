@@ -195,8 +195,8 @@
 /*
  * Landing v3 (src/routes/index.tsx).
  * A página usa estilo inline; aqui ficam só hover, foco e ajustes de celular.
- * Cores fixas da marca DEKAW: #00A850 (verde, o mesmo do app), #006B33 (verde
- * pra texto pequeno), #EEF9F2 (fundo verde-claro).
+ * Cores fixas da marca DEKAW: #00AB84 (verde da logo, o mesmo do app),
+ * #00694F (verde pra texto pequeno), #EEF9F6 (fundo verde-claro).
  */
 html {
   scroll-behavior: smooth;
@@ -215,11 +215,11 @@ html {
 }
 
 .navlink:hover {
-  color: #00a850 !important;
+  color: #00ab84 !important;
 }
 
 a:focus-visible {
-  outline: 3px solid #00a850;
+  outline: 3px solid #00ab84;
   outline-offset: 3px;
 }
 
