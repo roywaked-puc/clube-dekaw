@@ -50,12 +50,11 @@ quadra).
 
 ## Marca
 
-- Cor principal: `#00A850`, o mesmo verde do app (decisão de 03/10/2026).
-  Os arquivos originais da logo vêm em `#00AB84`; no site a logo foi
-  aplicada em `#00A850`.
-- Apoio: `#006B33` (texto pequeno verde e início do degradê dos botões),
-  `#E6F6EE` (etiquetas), `#EEF9F2` → branco (degradê dos fundos), `#13201A`
-  (títulos), `#4F5D55` (texto). Branco sobre `#00A850` só em logo, ícone e
+- Cor principal: `#00AB84`, o verde da logo. Site e app usam o mesmo verde
+  (decisão de 03/10/2026, à tarde; substitui o `#00A850`).
+- Apoio: `#00694F` (texto pequeno verde e início do degradê dos botões),
+  `#E6F6F1` (etiquetas), `#EEF9F6` → branco (degradê dos fundos), `#13201C`
+  (títulos), `#4F5D58` (texto). Branco sobre `#00AB84` só em logo, ícone e
   área grande: letra pequena não tem contraste suficiente.
 - Visual leve: fundo branco e verde-claro, botões em pílula, cantos
   arredondados, nenhuma seção escura. Nunca preto como fundo, nunca roxo.

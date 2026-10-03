@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 /*
- * Landing do Clube DEKAW (clube.dekaw.com.br) — versão 3, 03/10/2026.
+ * Landing do Clube DEKAW (clube.dekaw.com.br) — versão 3, 03/10/2026
+ * (verde da logo #00AB84 desde 03/10/2026, à tarde).
  *
  * Regras de conteúdo (bater com o app em app.dekaw.com.br, ver README.md):
  * - Pontos: organizar jogo +10, jogar +2. Níveis Bronze 0–49, Prata 50–149,
@@ -10,9 +11,9 @@ import { createFileRoute } from "@tanstack/react-router";
  *   só por convite. Não dizer "clube fechado, só por convite".
  * - Chat é da partida (existe depois que o jogo é criado).
  * - Professor e Dono de quadra: texto mantido por decisão do dono.
- * - Cores: verde DEKAW #00A850 (o mesmo do app) como principal, #006B33 pra
- *   texto pequeno verde, fundos claros (#EEF9F2 → branco). Sem seção escura.
- * - Logos em /public/logos (aplicadas em #00A850).
+ * - Cores: verde da logo #00AB84 (site e app) como principal, #00694F pra
+ *   texto pequeno verde, fundos claros (#EEF9F6 → branco). Sem seção escura.
+ * - Logos em /public/logos, no verde original da logo (#00AB84).
  */
 
 const TITLE = "DEKAW · Donos da Bola";
@@ -51,7 +52,7 @@ function Index() {
         width: "100%",
         minHeight: "100vh",
         background: "#FFFFFF",
-        color: "#13201A",
+        color: "#13201C",
         fontFamily: "'Instrument Sans', system-ui, sans-serif",
         fontSize: "17px",
         lineHeight: "1.55",
@@ -64,7 +65,7 @@ function Index() {
           zIndex: "30",
           background: "rgba(255,255,255,0.92)",
           backdropFilter: "blur(10px)",
-          borderBottom: "1px solid #E3F1E8",
+          borderBottom: "1px solid #E3F1EC",
         }}
       >
         <div
@@ -104,7 +105,7 @@ function Index() {
               className="navlink"
               href="#como-funciona"
               style={{
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "500",
@@ -116,7 +117,7 @@ function Index() {
               className="navlink"
               href="#para-quem-e"
               style={{
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "500",
@@ -128,7 +129,7 @@ function Index() {
               className="navlink"
               href="#ranking"
               style={{
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "500",
@@ -140,7 +141,7 @@ function Index() {
               className="navlink"
               href="#loja"
               style={{
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "500",
@@ -158,7 +159,7 @@ function Index() {
                 alignItems: "center",
                 minHeight: "44px",
                 padding: "0 12px",
-                color: "#006B33",
+                color: "#00694F",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "600",
@@ -175,12 +176,12 @@ function Index() {
                 minHeight: "44px",
                 padding: "0 20px",
                 borderRadius: "999px",
-                background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                background: "linear-gradient(135deg, #00694F 0%, #008A6A 55%, #00AB84 100%)",
                 color: "#FFFFFF",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "700",
-                boxShadow: "0 10px 24px -12px rgba(0,168,80,0.6)",
+                boxShadow: "0 10px 24px -12px rgba(0,171,132,0.6)",
               }}
             >
               Criar conta
@@ -193,7 +194,7 @@ function Index() {
         style={{
           position: "relative",
           overflow: "hidden",
-          background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)",
+          background: "linear-gradient(180deg, #EEF9F6 0%, #FFFFFF 100%)",
         }}
       >
         <img
@@ -237,9 +238,9 @@ function Index() {
                 margin: "0",
                 padding: "6px 14px",
                 borderRadius: "999px",
-                background: "#E6F6EE",
-                border: "1px solid #CDEBD8",
-                color: "#006B33",
+                background: "#E6F6F1",
+                border: "1px solid #CDEBE1",
+                color: "#00694F",
                 fontSize: "12px",
                 fontWeight: "700",
                 letterSpacing: "0.12em",
@@ -256,13 +257,13 @@ function Index() {
                 fontSize: "clamp(42px, 6vw, 72px)",
                 lineHeight: "1.02",
                 letterSpacing: "-0.025em",
-                color: "#13201A",
+                color: "#13201C",
               }}
             >
               Nunca mais fique sem ter{" "}
               <span
                 style={{
-                  background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                  background: "linear-gradient(90deg, #00694F 0%, #00AB84 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -271,7 +272,7 @@ function Index() {
                 com quem jogar.
               </span>
             </h1>
-            <p style={{ margin: "0", maxWidth: "34em", fontSize: "19px", color: "#4F5D55" }}>
+            <p style={{ margin: "0", maxWidth: "34em", fontSize: "19px", color: "#4F5D58" }}>
               O Dekaw é o clube digital onde amadores de esportes de raquete se organizam em tribos
               de confiança. Você chama a galera, a tribo recebe o aviso e quem topa confirma
               presença. Sem grupo lotado e sem passar telefone pra desconhecido.
@@ -287,12 +288,12 @@ function Index() {
                   minHeight: "52px",
                   padding: "0 26px",
                   borderRadius: "999px",
-                  background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                  background: "linear-gradient(135deg, #00694F 0%, #008A6A 55%, #00AB84 100%)",
                   color: "#FFFFFF",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "17px",
-                  boxShadow: "0 14px 30px -14px rgba(0,168,80,0.7)",
+                  boxShadow: "0 14px 30px -14px rgba(0,171,132,0.7)",
                 }}
               >
                 Criar minha conta{" "}
@@ -320,9 +321,9 @@ function Index() {
                   minHeight: "52px",
                   padding: "0 24px",
                   borderRadius: "999px",
-                  border: "1.5px solid #BFE3CC",
+                  border: "1.5px solid #BFE3D7",
                   background: "#FFFFFF",
-                  color: "#006B33",
+                  color: "#00694F",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "17px",
@@ -339,7 +340,7 @@ function Index() {
                 alignItems: "flex-start",
                 maxWidth: "30em",
                 fontSize: "15px",
-                color: "#4F5D55",
+                color: "#4F5D58",
               }}
             >
               <svg
@@ -347,7 +348,7 @@ function Index() {
                 height="18"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#00A850"
+                stroke="#00AB84"
                 strokeWidth="2.4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -358,7 +359,7 @@ function Index() {
                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
               </svg>
               <span>
-                <strong style={{ fontWeight: "700", color: "#13201A" }}>Recebeu um convite?</strong>{" "}
+                <strong style={{ fontWeight: "700", color: "#13201C" }}>Recebeu um convite?</strong>{" "}
                 Abra o link que te mandaram: ele já te leva direto pra tribo certa.
               </span>
             </p>
@@ -369,16 +370,16 @@ function Index() {
               aria-label="Ilustração da tela de um jogo no app: quem vai jogar, quem convidou cada pessoa e o chat da partida"
               style={{
                 background: "#FFFFFF",
-                color: "#13201A",
+                color: "#13201C",
                 borderRadius: "28px",
-                border: "1px solid #D7EDDF",
+                border: "1px solid #D7EDE6",
                 overflow: "hidden",
-                boxShadow: "0 30px 70px -24px rgba(0,168,80,0.45)",
+                boxShadow: "0 30px 70px -24px rgba(0,171,132,0.45)",
               }}
             >
               <div
                 style={{
-                  background: "#00A850",
+                  background: "#00AB84",
                   padding: "14px 18px",
                   display: "flex",
                   flexWrap: "wrap",
@@ -389,7 +390,7 @@ function Index() {
                   style={{
                     padding: "4px 10px",
                     borderRadius: "999px",
-                    background: "#006B33",
+                    background: "#00694F",
                     color: "#FFFFFF",
                     fontSize: "12px",
                     fontWeight: "700",
@@ -404,7 +405,7 @@ function Index() {
                     padding: "4px 10px",
                     borderRadius: "999px",
                     background: "#FFFFFF",
-                    color: "#006B33",
+                    color: "#00694F",
                     fontSize: "12px",
                     fontWeight: "700",
                     letterSpacing: "0.06em",
@@ -418,7 +419,7 @@ function Index() {
                     padding: "4px 10px",
                     borderRadius: "999px",
                     background: "#FFFFFF",
-                    color: "#006B33",
+                    color: "#00694F",
                     fontSize: "12px",
                     fontWeight: "700",
                     letterSpacing: "0.06em",
@@ -435,7 +436,7 @@ function Index() {
                     fontWeight: "600",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: "#63716A",
+                    color: "#63716C",
                   }}
                 >
                   Tribo Amigos do Léo
@@ -448,7 +449,7 @@ function Index() {
                     fontSize: "28px",
                     lineHeight: "1.1",
                     letterSpacing: "-0.02em",
-                    color: "#13201A",
+                    color: "#13201C",
                   }}
                 >
                   Sábado, 08:00
@@ -460,7 +461,7 @@ function Index() {
                     alignItems: "center",
                     gap: "6px",
                     fontSize: "14px",
-                    color: "#4F5D55",
+                    color: "#4F5D58",
                   }}
                 >
                   <svg
@@ -468,7 +469,7 @@ function Index() {
                     height="16"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#00A850"
+                    stroke="#00AB84"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -490,11 +491,11 @@ function Index() {
                     fontWeight: "700",
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
-                    color: "#13201A",
+                    color: "#13201C",
                   }}
                 >
                   <span>Quem vai jogar</span>
-                  <span style={{ color: "#006B33" }}>3 de 4</span>
+                  <span style={{ color: "#00694F" }}>3 de 4</span>
                 </div>
                 <div
                   style={{
@@ -511,7 +512,7 @@ function Index() {
                         height: "38px",
                         flex: "none",
                         borderRadius: "50%",
-                        background: "#006B33",
+                        background: "#00694F",
                         color: "#FFFFFF",
                         display: "flex",
                         alignItems: "center",
@@ -532,14 +533,14 @@ function Index() {
                       }}
                     >
                       <span style={{ fontWeight: "600", fontSize: "15px" }}>Léo A.</span>
-                      <span style={{ fontSize: "13px", color: "#63716A" }}>Organizador</span>
+                      <span style={{ fontSize: "13px", color: "#63716C" }}>Organizador</span>
                     </span>
                     <span
                       style={{
                         padding: "4px 8px",
                         borderRadius: "999px",
-                        background: "#E6F6EE",
-                        color: "#006B33",
+                        background: "#E6F6F1",
+                        color: "#00694F",
                         fontSize: "11px",
                         fontWeight: "700",
                       }}
@@ -554,8 +555,8 @@ function Index() {
                         height: "38px",
                         flex: "none",
                         borderRadius: "50%",
-                        background: "#E6F6EE",
-                        color: "#006B33",
+                        background: "#E6F6F1",
+                        color: "#00694F",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -575,7 +576,7 @@ function Index() {
                       }}
                     >
                       <span style={{ fontWeight: "600", fontSize: "15px" }}>Marina P.</span>
-                      <span style={{ fontSize: "13px", color: "#63716A" }}>convidada do Léo</span>
+                      <span style={{ fontSize: "13px", color: "#63716C" }}>convidada do Léo</span>
                     </span>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -586,7 +587,7 @@ function Index() {
                         flex: "none",
                         borderRadius: "50%",
                         background: "#F1F5F4",
-                        color: "#33413A",
+                        color: "#33413C",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -606,7 +607,7 @@ function Index() {
                       }}
                     >
                       <span style={{ fontWeight: "600", fontSize: "15px" }}>Bia T.</span>
-                      <span style={{ fontSize: "13px", color: "#63716A" }}>
+                      <span style={{ fontSize: "13px", color: "#63716C" }}>
                         convidada da Marina
                       </span>
                     </span>
@@ -619,8 +620,8 @@ function Index() {
                         flex: "none",
                         boxSizing: "border-box",
                         borderRadius: "50%",
-                        border: "2px dashed #A3DCB9",
-                        color: "#00A850",
+                        border: "2px dashed #9FD9C6",
+                        color: "#00AB84",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -641,7 +642,7 @@ function Index() {
                         <path d="M5 12h14"></path>
                       </svg>
                     </span>
-                    <span style={{ flex: "1", minWidth: "0", fontSize: "15px", color: "#63716A" }}>
+                    <span style={{ flex: "1", minWidth: "0", fontSize: "15px", color: "#63716C" }}>
                       Vaga aberta
                     </span>
                   </div>
@@ -652,7 +653,7 @@ function Index() {
                   margin: "16px 20px 0",
                   padding: "12px 14px",
                   borderRadius: "16px",
-                  background: "#EEF9F2",
+                  background: "#EEF9F6",
                   fontSize: "14px",
                 }}
               >
@@ -662,7 +663,7 @@ function Index() {
                     fontWeight: "700",
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
-                    color: "#006B33",
+                    color: "#00694F",
                   }}
                 >
                   Chat do jogo
@@ -680,7 +681,7 @@ function Index() {
                     justifyContent: "center",
                     height: "48px",
                     borderRadius: "999px",
-                    background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                    background: "linear-gradient(135deg, #00694F 0%, #008A6A 55%, #00AB84 100%)",
                     color: "#FFFFFF",
                     fontWeight: "700",
                   }}
@@ -694,7 +695,7 @@ function Index() {
                 margin: "12px 0 0",
                 textAlign: "center",
                 fontSize: "13px",
-                color: "#63716A",
+                color: "#63716C",
               }}
             >
               Ilustração com dados fictícios
@@ -727,9 +728,9 @@ function Index() {
                 margin: "0",
                 padding: "6px 14px",
                 borderRadius: "999px",
-                background: "#E6F6EE",
-                border: "1px solid #CDEBD8",
-                color: "#006B33",
+                background: "#E6F6F1",
+                border: "1px solid #CDEBE1",
+                color: "#00694F",
                 fontSize: "12px",
                 fontWeight: "700",
                 letterSpacing: "0.12em",
@@ -746,12 +747,12 @@ function Index() {
                 fontSize: "clamp(32px, 4.2vw, 48px)",
                 lineHeight: "1.08",
                 letterSpacing: "-0.02em",
-                color: "#13201A",
+                color: "#13201C",
               }}
             >
               A raquete está no carro. O que falta é o jogo.
             </h2>
-            <p style={{ margin: "0", fontSize: "19px", color: "#4F5D55" }}>
+            <p style={{ margin: "0", fontSize: "19px", color: "#4F5D58" }}>
               Quem joga esporte de raquete conhece a rotina: grupo de mensagem lotado, ninguém
               confirma, quadra reservada e alguém desiste na última hora.
             </p>
@@ -769,7 +770,7 @@ function Index() {
                 flexDirection: "column",
                 gap: "14px",
                 padding: "28px",
-                border: "1px solid #DCEFE3",
+                border: "1px solid #DCEFE8",
                 borderRadius: "24px",
                 background: "#FFFFFF",
               }}
@@ -779,8 +780,8 @@ function Index() {
                   width: "52px",
                   height: "52px",
                   borderRadius: "50%",
-                  background: "#E6F6EE",
-                  color: "#008A42",
+                  background: "#E6F6F1",
+                  color: "#008A6A",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -811,12 +812,12 @@ function Index() {
                   fontSize: "21px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Não tenho com quem jogar
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                 Você evoluiu, quer jogar mais vezes na semana, mas sempre depende das mesmas duas
                 pessoas. Quando elas não podem, o jogo morre.
               </p>
@@ -827,7 +828,7 @@ function Index() {
                 flexDirection: "column",
                 gap: "14px",
                 padding: "28px",
-                border: "1px solid #DCEFE3",
+                border: "1px solid #DCEFE8",
                 borderRadius: "24px",
                 background: "#FFFFFF",
               }}
@@ -837,8 +838,8 @@ function Index() {
                   width: "52px",
                   height: "52px",
                   borderRadius: "50%",
-                  background: "#E6F6EE",
-                  color: "#008A42",
+                  background: "#E6F6F1",
+                  color: "#008A6A",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -867,12 +868,12 @@ function Index() {
                   fontSize: "21px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Quadra vazia em horário bom
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                 Donos de quadra veem horários ociosos todos os dias, enquanto tem gente querendo
                 jogar e sem saber que aquele slot está livre.
               </p>
@@ -883,7 +884,7 @@ function Index() {
                 flexDirection: "column",
                 gap: "14px",
                 padding: "28px",
-                border: "1px solid #DCEFE3",
+                border: "1px solid #DCEFE8",
                 borderRadius: "24px",
                 background: "#FFFFFF",
               }}
@@ -893,8 +894,8 @@ function Index() {
                   width: "52px",
                   height: "52px",
                   borderRadius: "50%",
-                  background: "#E6F6EE",
-                  color: "#008A42",
+                  background: "#E6F6F1",
+                  color: "#008A6A",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -922,12 +923,12 @@ function Index() {
                   fontSize: "21px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Insegurança com desconhecido
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                 Marcar com alguém que ninguém conhece, passar telefone, não saber o nível nem se a
                 pessoa aparece. Falta referência de confiança.
               </p>
@@ -935,7 +936,7 @@ function Index() {
           </div>
         </div>
       </section>
-      <section style={{ background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)" }}>
+      <section style={{ background: "linear-gradient(180deg, #EEF9F6 0%, #FFFFFF 100%)" }}>
         <div
           style={{
             maxWidth: "1200px",
@@ -962,9 +963,9 @@ function Index() {
                 margin: "0",
                 padding: "6px 14px",
                 borderRadius: "999px",
-                background: "#E6F6EE",
-                border: "1px solid #CDEBD8",
-                color: "#006B33",
+                background: "#E6F6F1",
+                border: "1px solid #CDEBE1",
+                color: "#00694F",
                 fontSize: "12px",
                 fontWeight: "700",
                 letterSpacing: "0.12em",
@@ -981,13 +982,13 @@ function Index() {
                 fontSize: "clamp(32px, 4.2vw, 48px)",
                 lineHeight: "1.08",
                 letterSpacing: "-0.02em",
-                color: "#13201A",
+                color: "#13201C",
               }}
             >
               Um clube onde todo mundo tem nome, referência e{" "}
               <span
                 style={{
-                  background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                  background: "linear-gradient(90deg, #00694F 0%, #00AB84 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -996,7 +997,7 @@ function Index() {
                 vontade de jogar.
               </span>
             </h2>
-            <p style={{ margin: "0", fontSize: "18px", color: "#4F5D55" }}>
+            <p style={{ margin: "0", fontSize: "18px", color: "#4F5D58" }}>
               O Dekaw não é mais um app de agenda. É a sua tribo organizada: gente apresentada por
               gente, conversa no lugar certo e jogo marcado em minutos.
             </p>
@@ -1018,7 +1019,7 @@ function Index() {
                     height: "26px",
                     marginTop: "1px",
                     borderRadius: "50%",
-                    background: "#00A850",
+                    background: "#00AB84",
                     color: "#FFFFFF",
                     display: "flex",
                     alignItems: "center",
@@ -1051,7 +1052,7 @@ function Index() {
                     height: "26px",
                     marginTop: "1px",
                     borderRadius: "50%",
-                    background: "#00A850",
+                    background: "#00AB84",
                     color: "#FFFFFF",
                     display: "flex",
                     alignItems: "center",
@@ -1085,7 +1086,7 @@ function Index() {
                     height: "26px",
                     marginTop: "1px",
                     borderRadius: "50%",
-                    background: "#00A850",
+                    background: "#00AB84",
                     color: "#FFFFFF",
                     display: "flex",
                     alignItems: "center",
@@ -1118,7 +1119,7 @@ function Index() {
                     height: "26px",
                     marginTop: "1px",
                     borderRadius: "50%",
-                    background: "#00A850",
+                    background: "#00AB84",
                     color: "#FFFFFF",
                     display: "flex",
                     alignItems: "center",
@@ -1149,7 +1150,7 @@ function Index() {
                     height: "26px",
                     marginTop: "1px",
                     borderRadius: "50%",
-                    background: "#00A850",
+                    background: "#00AB84",
                     color: "#FFFFFF",
                     display: "flex",
                     alignItems: "center",
@@ -1184,12 +1185,12 @@ function Index() {
                 minHeight: "52px",
                 padding: "0 26px",
                 borderRadius: "999px",
-                background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                background: "linear-gradient(135deg, #00694F 0%, #008A6A 55%, #00AB84 100%)",
                 color: "#FFFFFF",
                 textDecoration: "none",
                 fontWeight: "700",
                 fontSize: "17px",
-                boxShadow: "0 14px 30px -14px rgba(0,168,80,0.7)",
+                boxShadow: "0 14px 30px -14px rgba(0,171,132,0.7)",
               }}
             >
               Criar minha conta{" "}
@@ -1227,8 +1228,8 @@ function Index() {
                 padding: "24px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
-                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
+                border: "1px solid #E3F1EC",
+                boxShadow: "0 12px 30px -16px rgba(0,171,132,0.35)",
               }}
             >
               <span
@@ -1236,7 +1237,7 @@ function Index() {
                   width: "46px",
                   height: "46px",
                   borderRadius: "14px",
-                  background: "#00A850",
+                  background: "#00AB84",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1268,12 +1269,12 @@ function Index() {
                   fontSize: "21px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Tribos
               </h3>
-              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D58" }}>
                 Seu círculo de jogo, com gente de confiança.
               </p>
             </div>
@@ -1286,8 +1287,8 @@ function Index() {
                 padding: "24px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
-                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
+                border: "1px solid #E3F1EC",
+                boxShadow: "0 12px 30px -16px rgba(0,171,132,0.35)",
               }}
             >
               <span
@@ -1295,7 +1296,7 @@ function Index() {
                   width: "46px",
                   height: "46px",
                   borderRadius: "14px",
-                  background: "#00A850",
+                  background: "#00AB84",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1324,12 +1325,12 @@ function Index() {
                   fontSize: "21px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Chat do jogo
               </h3>
-              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D58" }}>
                 Combine tudo dentro da partida.
               </p>
             </div>
@@ -1342,8 +1343,8 @@ function Index() {
                 padding: "24px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
-                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
+                border: "1px solid #E3F1EC",
+                boxShadow: "0 12px 30px -16px rgba(0,171,132,0.35)",
               }}
             >
               <span
@@ -1351,7 +1352,7 @@ function Index() {
                   width: "46px",
                   height: "46px",
                   borderRadius: "14px",
-                  background: "#00A850",
+                  background: "#00AB84",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1381,12 +1382,12 @@ function Index() {
                   fontSize: "21px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Ranking
               </h3>
-              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D58" }}>
                 Pontos e níveis pra quem faz o jogo acontecer.
               </p>
             </div>
@@ -1399,8 +1400,8 @@ function Index() {
                 padding: "24px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
-                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
+                border: "1px solid #E3F1EC",
+                boxShadow: "0 12px 30px -16px rgba(0,171,132,0.35)",
               }}
             >
               <span
@@ -1408,7 +1409,7 @@ function Index() {
                   width: "46px",
                   height: "46px",
                   borderRadius: "14px",
-                  background: "#00A850",
+                  background: "#00AB84",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1439,12 +1440,12 @@ function Index() {
                   fontSize: "21px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Quadras
               </h3>
-              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D58" }}>
                 Horários livres na mão de quem joga.
               </p>
             </div>
@@ -1476,9 +1477,9 @@ function Index() {
                 margin: "0",
                 padding: "6px 14px",
                 borderRadius: "999px",
-                background: "#E6F6EE",
-                border: "1px solid #CDEBD8",
-                color: "#006B33",
+                background: "#E6F6F1",
+                border: "1px solid #CDEBE1",
+                color: "#00694F",
                 fontSize: "12px",
                 fontWeight: "700",
                 letterSpacing: "0.12em",
@@ -1495,7 +1496,7 @@ function Index() {
                 fontSize: "clamp(32px, 4.2vw, 48px)",
                 lineHeight: "1.08",
                 letterSpacing: "-0.02em",
-                color: "#13201A",
+                color: "#13201C",
               }}
             >
               Três passos entre a tribo e a primeira partida.
@@ -1516,7 +1517,7 @@ function Index() {
                 padding: "28px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #DCEFE3",
+                border: "1px solid #DCEFE8",
               }}
             >
               <span
@@ -1526,7 +1527,7 @@ function Index() {
                   fontSize: "56px",
                   lineHeight: "1",
                   letterSpacing: "-0.03em",
-                  background: "linear-gradient(135deg, #00A850 0%, #8FDCB0 100%)",
+                  background: "linear-gradient(135deg, #00AB84 0%, #8FDCC6 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -1542,12 +1543,12 @@ function Index() {
                   fontSize: "22px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Entre numa tribo
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                 Pelo convite de quem já está dentro, pedindo entrada ou numa tribo aberta. Não achou
                 a sua? Crie uma e chame a galera.
               </p>
@@ -1560,7 +1561,7 @@ function Index() {
                 padding: "28px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #DCEFE3",
+                border: "1px solid #DCEFE8",
               }}
             >
               <span
@@ -1570,7 +1571,7 @@ function Index() {
                   fontSize: "56px",
                   lineHeight: "1",
                   letterSpacing: "-0.03em",
-                  background: "linear-gradient(135deg, #00A850 0%, #8FDCB0 100%)",
+                  background: "linear-gradient(135deg, #00AB84 0%, #8FDCC6 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -1586,12 +1587,12 @@ function Index() {
                   fontSize: "22px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Chame a galera
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                 Monte o jogo em 3 passos: esporte, nível, dia, horário, quadra e vagas. A tribo é
                 avisada na hora, só quem joga aquele esporte e quer aviso naquele horário.
               </p>
@@ -1604,7 +1605,7 @@ function Index() {
                 padding: "28px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #DCEFE3",
+                border: "1px solid #DCEFE8",
               }}
             >
               <span
@@ -1614,7 +1615,7 @@ function Index() {
                   fontSize: "56px",
                   lineHeight: "1",
                   letterSpacing: "-0.03em",
-                  background: "linear-gradient(135deg, #00A850 0%, #8FDCB0 100%)",
+                  background: "linear-gradient(135deg, #00AB84 0%, #8FDCC6 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -1630,12 +1631,12 @@ function Index() {
                   fontSize: "22px",
                   lineHeight: "1.2",
                   letterSpacing: "-0.01em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Combine e entre em quadra
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                 Quem topa confirma presença e garante a vaga. Dúvida de quadra, horário ou quem leva
                 a bolinha? Resolve no chat do jogo.
               </p>
@@ -1649,8 +1650,8 @@ function Index() {
               gap: "32px",
               padding: "clamp(24px, 4vw, 40px)",
               borderRadius: "28px",
-              background: "linear-gradient(135deg, #E6F6EE 0%, #F5FBF7 100%)",
-              border: "1px solid #DCEFE3",
+              background: "linear-gradient(135deg, #E6F6F1 0%, #F5FBF9 100%)",
+              border: "1px solid #DCEFE8",
             }}
           >
             <div
@@ -1669,7 +1670,7 @@ function Index() {
                   fontWeight: "700",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "#006B33",
+                  color: "#00694F",
                 }}
               >
                 Depois do jogo
@@ -1682,7 +1683,7 @@ function Index() {
                   fontSize: "30px",
                   lineHeight: "1.1",
                   letterSpacing: "-0.02em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Reviva o jogo e feche o dia.
@@ -1705,11 +1706,11 @@ function Index() {
                     height: "42px",
                     borderRadius: "50%",
                     background: "#FFFFFF",
-                    color: "#008A42",
+                    color: "#008A6A",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 6px 16px -10px rgba(0,168,80,0.6)",
+                    boxShadow: "0 6px 16px -10px rgba(0,171,132,0.6)",
                   }}
                 >
                   <svg
@@ -1729,7 +1730,7 @@ function Index() {
                 </span>
                 <span style={{ display: "flex", flexDirection: "column" }}>
                   <strong style={{ fontWeight: "700", fontSize: "16px" }}>Foto do jogo</strong>
-                  <span style={{ fontSize: "15px", color: "#4F5D55" }}>
+                  <span style={{ fontSize: "15px", color: "#4F5D58" }}>
                     A galera sobe a foto do dia.
                   </span>
                 </span>
@@ -1742,11 +1743,11 @@ function Index() {
                     height: "42px",
                     borderRadius: "50%",
                     background: "#FFFFFF",
-                    color: "#008A42",
+                    color: "#008A6A",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 6px 16px -10px rgba(0,168,80,0.6)",
+                    boxShadow: "0 6px 16px -10px rgba(0,171,132,0.6)",
                   }}
                 >
                   <svg
@@ -1768,7 +1769,7 @@ function Index() {
                   <strong style={{ fontWeight: "700", fontSize: "16px" }}>
                     Quem foi e quem pagou
                   </strong>
-                  <span style={{ fontSize: "15px", color: "#4F5D55" }}>
+                  <span style={{ fontSize: "15px", color: "#4F5D58" }}>
                     O organizador marca a parte de cada um. O app não cobra nada.
                   </span>
                 </span>
@@ -1781,11 +1782,11 @@ function Index() {
                     height: "42px",
                     borderRadius: "50%",
                     background: "#FFFFFF",
-                    color: "#008A42",
+                    color: "#008A6A",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 6px 16px -10px rgba(0,168,80,0.6)",
+                    boxShadow: "0 6px 16px -10px rgba(0,171,132,0.6)",
                   }}
                 >
                   <svg
@@ -1804,7 +1805,7 @@ function Index() {
                 </span>
                 <span style={{ display: "flex", flexDirection: "column" }}>
                   <strong style={{ fontWeight: "700", fontSize: "16px" }}>Comentários</strong>
-                  <span style={{ fontSize: "15px", color: "#4F5D55" }}>
+                  <span style={{ fontSize: "15px", color: "#4F5D58" }}>
                     A resenha fica guardada no próprio jogo.
                   </span>
                 </span>
@@ -1817,11 +1818,11 @@ function Index() {
                     height: "42px",
                     borderRadius: "50%",
                     background: "#FFFFFF",
-                    color: "#008A42",
+                    color: "#008A6A",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    boxShadow: "0 6px 16px -10px rgba(0,168,80,0.6)",
+                    boxShadow: "0 6px 16px -10px rgba(0,171,132,0.6)",
                   }}
                 >
                   <svg
@@ -1842,7 +1843,7 @@ function Index() {
                   <strong style={{ fontWeight: "700", fontSize: "16px" }}>
                     Avaliação da galera
                   </strong>
-                  <span style={{ fontSize: "15px", color: "#4F5D55" }}>
+                  <span style={{ fontSize: "15px", color: "#4F5D58" }}>
                     Em até 24h, e é anônima.
                   </span>
                 </span>
@@ -1853,7 +1854,7 @@ function Index() {
       </section>
       <section
         id="para-quem-e"
-        style={{ background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)" }}
+        style={{ background: "linear-gradient(180deg, #EEF9F6 0%, #FFFFFF 100%)" }}
       >
         <div
           style={{
@@ -1879,9 +1880,9 @@ function Index() {
                 margin: "0",
                 padding: "6px 14px",
                 borderRadius: "999px",
-                background: "#E6F6EE",
-                border: "1px solid #CDEBD8",
-                color: "#006B33",
+                background: "#E6F6F1",
+                border: "1px solid #CDEBE1",
+                color: "#00694F",
                 fontSize: "12px",
                 fontWeight: "700",
                 letterSpacing: "0.12em",
@@ -1898,7 +1899,7 @@ function Index() {
                 fontSize: "clamp(32px, 4.2vw, 48px)",
                 lineHeight: "1.08",
                 letterSpacing: "-0.02em",
-                color: "#13201A",
+                color: "#13201C",
               }}
             >
               Você entra pela porta que faz sentido para o seu jogo.
@@ -1919,8 +1920,8 @@ function Index() {
                 padding: "30px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
-                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
+                border: "1px solid #E3F1EC",
+                boxShadow: "0 12px 30px -16px rgba(0,171,132,0.35)",
               }}
             >
               <span
@@ -1928,7 +1929,7 @@ function Index() {
                   width: "52px",
                   height: "52px",
                   borderRadius: "16px",
-                  background: "#00A850",
+                  background: "#00AB84",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1958,12 +1959,12 @@ function Index() {
                   fontSize: "26px",
                   lineHeight: "1.1",
                   letterSpacing: "-0.02em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Jogador
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                 Quer jogar mais vezes na semana, com gente de confiança e sem ficar implorando
                 confirmação em grupo.
               </p>
@@ -1985,7 +1986,7 @@ function Index() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      background: "#00A850",
+                      background: "#00AB84",
                     }}
                   ></span>
                   Parceiros com referência
@@ -1997,7 +1998,7 @@ function Index() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      background: "#00A850",
+                      background: "#00AB84",
                     }}
                   ></span>
                   Aviso de jogo no seu esporte e horário
@@ -2009,7 +2010,7 @@ function Index() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      background: "#00A850",
+                      background: "#00AB84",
                     }}
                   ></span>
                   Seus jogos e pontos no perfil
@@ -2027,8 +2028,8 @@ function Index() {
                   minHeight: "48px",
                   padding: "0 22px",
                   borderRadius: "999px",
-                  border: "1.5px solid #BFE3CC",
-                  color: "#006B33",
+                  border: "1.5px solid #BFE3D7",
+                  color: "#00694F",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "16px",
@@ -2059,8 +2060,8 @@ function Index() {
                 padding: "30px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
-                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
+                border: "1px solid #E3F1EC",
+                boxShadow: "0 12px 30px -16px rgba(0,171,132,0.35)",
               }}
             >
               <span
@@ -2068,7 +2069,7 @@ function Index() {
                   width: "52px",
                   height: "52px",
                   borderRadius: "16px",
-                  background: "#00A850",
+                  background: "#00AB84",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -2098,12 +2099,12 @@ function Index() {
                   fontSize: "26px",
                   lineHeight: "1.1",
                   letterSpacing: "-0.02em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Professor
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                 Coloque seus alunos na sua tribo: eles acham parceiros para treinar fora da aula,
                 evoluem mais rápido e ficam mais tempo com você.
               </p>
@@ -2125,7 +2126,7 @@ function Index() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      background: "#00A850",
+                      background: "#00AB84",
                     }}
                   ></span>
                   Alunos conectados entre si
@@ -2137,7 +2138,7 @@ function Index() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      background: "#00A850",
+                      background: "#00AB84",
                     }}
                   ></span>
                   Mais motivação e retenção
@@ -2149,7 +2150,7 @@ function Index() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      background: "#00A850",
+                      background: "#00AB84",
                     }}
                   ></span>
                   Sua turma organizada em um lugar
@@ -2167,8 +2168,8 @@ function Index() {
                   minHeight: "48px",
                   padding: "0 22px",
                   borderRadius: "999px",
-                  border: "1.5px solid #BFE3CC",
-                  color: "#006B33",
+                  border: "1.5px solid #BFE3D7",
+                  color: "#00694F",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "16px",
@@ -2199,8 +2200,8 @@ function Index() {
                 padding: "30px",
                 borderRadius: "24px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
-                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
+                border: "1px solid #E3F1EC",
+                boxShadow: "0 12px 30px -16px rgba(0,171,132,0.35)",
               }}
             >
               <span
@@ -2208,7 +2209,7 @@ function Index() {
                   width: "52px",
                   height: "52px",
                   borderRadius: "16px",
-                  background: "#00A850",
+                  background: "#00AB84",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -2239,12 +2240,12 @@ function Index() {
                   fontSize: "26px",
                   lineHeight: "1.1",
                   letterSpacing: "-0.02em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 Dono de quadra
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                 Cadastre seus clientes e divulgue horários vagos direto para quem já quer jogar.
                 Horário ocioso vira quadra cheia.
               </p>
@@ -2266,7 +2267,7 @@ function Index() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      background: "#00A850",
+                      background: "#00AB84",
                     }}
                   ></span>
                   Divulgação de slots livres
@@ -2278,7 +2279,7 @@ function Index() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      background: "#00A850",
+                      background: "#00AB84",
                     }}
                   ></span>
                   Base de clientes ativa
@@ -2290,7 +2291,7 @@ function Index() {
                       width: "8px",
                       height: "8px",
                       borderRadius: "50%",
-                      background: "#00A850",
+                      background: "#00AB84",
                     }}
                   ></span>
                   Mais ocupação fora do pico
@@ -2308,8 +2309,8 @@ function Index() {
                   minHeight: "48px",
                   padding: "0 22px",
                   borderRadius: "999px",
-                  border: "1.5px solid #BFE3CC",
-                  color: "#006B33",
+                  border: "1.5px solid #BFE3D7",
+                  color: "#00694F",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "16px",
@@ -2360,9 +2361,9 @@ function Index() {
                 margin: "0",
                 padding: "6px 14px",
                 borderRadius: "999px",
-                background: "#E6F6EE",
-                border: "1px solid #CDEBD8",
-                color: "#006B33",
+                background: "#E6F6F1",
+                border: "1px solid #CDEBE1",
+                color: "#00694F",
                 fontSize: "12px",
                 fontWeight: "700",
                 letterSpacing: "0.12em",
@@ -2379,13 +2380,13 @@ function Index() {
                 fontSize: "clamp(32px, 4.2vw, 48px)",
                 lineHeight: "1.08",
                 letterSpacing: "-0.02em",
-                color: "#13201A",
+                color: "#13201C",
               }}
             >
               Na quadra,{" "}
               <span
                 style={{
-                  background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                  background: "linear-gradient(90deg, #00694F 0%, #00AB84 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -2394,7 +2395,7 @@ function Index() {
                 palavra vale.
               </span>
             </h2>
-            <p style={{ margin: "0", fontSize: "19px", color: "#4F5D55" }}>
+            <p style={{ margin: "0", fontSize: "19px", color: "#4F5D58" }}>
               Marcar com quem você ainda não conhece fica mais fácil quando dá pra ver quem trouxe a
               pessoa e como ela costuma cumprir o combinado.
             </p>
@@ -2409,8 +2410,8 @@ function Index() {
                 gap: "20px",
                 padding: "clamp(24px, 4vw, 36px)",
                 borderRadius: "28px",
-                background: "linear-gradient(180deg, #F5FBF7 0%, #FFFFFF 100%)",
-                border: "1px solid #DCEFE3",
+                background: "linear-gradient(180deg, #F5FBF9 0%, #FFFFFF 100%)",
+                border: "1px solid #DCEFE8",
               }}
             >
               <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
@@ -2422,12 +2423,12 @@ function Index() {
                     fontSize: "24px",
                     lineHeight: "1.15",
                     letterSpacing: "-0.02em",
-                    color: "#13201A",
+                    color: "#13201C",
                   }}
                 >
                   Selo de confiabilidade
                 </h3>
-                <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
+                <p style={{ margin: "0", fontSize: "16px", color: "#4F5D58" }}>
                   Todo perfil mostra um destes selos, calculado pelos jogos de cada pessoa.
                 </p>
               </div>
@@ -2441,7 +2442,7 @@ function Index() {
                     padding: "14px 16px",
                     borderRadius: "16px",
                     background: "#FFFFFF",
-                    border: "1px solid #E3F1E8",
+                    border: "1px solid #E3F1EC",
                   }}
                 >
                   <span
@@ -2457,7 +2458,7 @@ function Index() {
                   >
                     Novo na comunidade
                   </span>
-                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D55" }}>
+                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D58" }}>
                     Ainda tem menos de 3 jogos.
                   </span>
                 </div>
@@ -2470,7 +2471,7 @@ function Index() {
                     padding: "14px 16px",
                     borderRadius: "16px",
                     background: "#FFFFFF",
-                    border: "1px solid #E3F1E8",
+                    border: "1px solid #E3F1EC",
                   }}
                 >
                   <span
@@ -2478,15 +2479,15 @@ function Index() {
                       flex: "none",
                       padding: "6px 12px",
                       borderRadius: "999px",
-                      background: "#E6F6EE",
-                      color: "#006B33",
+                      background: "#E6F6F1",
+                      color: "#00694F",
                       fontSize: "14px",
                       fontWeight: "700",
                     }}
                   >
                     Sempre confirma presença
                   </span>
-                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D55" }}>
+                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D58" }}>
                     Nenhuma falta e nenhum cancelamento em cima da hora.
                   </span>
                 </div>
@@ -2499,7 +2500,7 @@ function Index() {
                     padding: "14px 16px",
                     borderRadius: "16px",
                     background: "#FFFFFF",
-                    border: "1px solid #E3F1E8",
+                    border: "1px solid #E3F1EC",
                   }}
                 >
                   <span
@@ -2515,7 +2516,7 @@ function Index() {
                   >
                     Geralmente confiável
                   </span>
-                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D55" }}>
+                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D58" }}>
                     Falhou em até 1 de cada 4 jogos.
                   </span>
                 </div>
@@ -2528,7 +2529,7 @@ function Index() {
                     padding: "14px 16px",
                     borderRadius: "16px",
                     background: "#FFFFFF",
-                    border: "1px solid #E3F1E8",
+                    border: "1px solid #E3F1EC",
                   }}
                 >
                   <span
@@ -2544,7 +2545,7 @@ function Index() {
                   >
                     Histórico de faltas frequentes
                   </span>
-                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D55" }}>
+                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D58" }}>
                     Falhou em mais de 1 de cada 4 jogos.
                   </span>
                 </div>
@@ -2557,7 +2558,7 @@ function Index() {
                   alignItems: "flex-start",
                   fontSize: "15px",
                   fontWeight: "600",
-                  color: "#006B33",
+                  color: "#00694F",
                 }}
               >
                 <svg
@@ -2565,7 +2566,7 @@ function Index() {
                   height="18"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#00A850"
+                  stroke="#00AB84"
                   strokeWidth="2.8"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -2596,8 +2597,8 @@ function Index() {
                   padding: "24px",
                   borderRadius: "24px",
                   background: "#FFFFFF",
-                  border: "1px solid #E3F1E8",
-                  boxShadow: "0 12px 30px -18px rgba(0,168,80,0.35)",
+                  border: "1px solid #E3F1EC",
+                  boxShadow: "0 12px 30px -18px rgba(0,171,132,0.35)",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -2607,8 +2608,8 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#E6F6EE",
-                      color: "#006B33",
+                      background: "#E6F6F1",
+                      color: "#00694F",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -2620,7 +2621,7 @@ function Index() {
                   </span>
                   <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.25" }}>
                     <strong style={{ fontWeight: "700" }}>Marina P.</strong>
-                    <span style={{ fontSize: "14px", color: "#63716A" }}>convidada do Léo</span>
+                    <span style={{ fontSize: "14px", color: "#63716C" }}>convidada do Léo</span>
                   </span>
                 </div>
                 <h3
@@ -2631,12 +2632,12 @@ function Index() {
                     fontSize: "20px",
                     lineHeight: "1.2",
                     letterSpacing: "-0.01em",
-                    color: "#13201A",
+                    color: "#13201C",
                   }}
                 >
                   Convite com nome
                 </h3>
-                <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
+                <p style={{ margin: "0", fontSize: "15px", color: "#4F5D58" }}>
                   Quem entra por convite carrega o nome de quem trouxe. Isso cria compromisso dos
                   dois lados.
                 </p>
@@ -2650,8 +2651,8 @@ function Index() {
                   padding: "24px",
                   borderRadius: "24px",
                   background: "#FFFFFF",
-                  border: "1px solid #E3F1E8",
-                  boxShadow: "0 12px 30px -18px rgba(0,168,80,0.35)",
+                  border: "1px solid #E3F1EC",
+                  boxShadow: "0 12px 30px -18px rgba(0,171,132,0.35)",
                 }}
               >
                 <h3
@@ -2662,12 +2663,12 @@ function Index() {
                     fontSize: "20px",
                     lineHeight: "1.2",
                     letterSpacing: "-0.01em",
-                    color: "#13201A",
+                    color: "#13201C",
                   }}
                 >
                   Avaliação da galera
                 </h3>
-                <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
+                <p style={{ margin: "0", fontSize: "15px", color: "#4F5D58" }}>
                   Depois do jogo, você avalia quem jogou com você: habilidade, harmonia e se jogaria
                   de novo. É anônimo, e a média só aparece no perfil depois de 5 avaliações.
                 </p>
@@ -2681,8 +2682,8 @@ function Index() {
                   padding: "24px",
                   borderRadius: "24px",
                   background: "#FFFFFF",
-                  border: "1px solid #E3F1E8",
-                  boxShadow: "0 12px 30px -18px rgba(0,168,80,0.35)",
+                  border: "1px solid #E3F1EC",
+                  boxShadow: "0 12px 30px -18px rgba(0,171,132,0.35)",
                 }}
               >
                 <h3
@@ -2693,12 +2694,12 @@ function Index() {
                     fontSize: "20px",
                     lineHeight: "1.2",
                     letterSpacing: "-0.01em",
-                    color: "#13201A",
+                    color: "#13201C",
                   }}
                 >
                   Aviso de nível
                 </h3>
-                <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
+                <p style={{ margin: "0", fontSize: "15px", color: "#4F5D58" }}>
                   Cada jogo tem nível. Se ele estiver bem acima ou abaixo do seu, o app avisa antes
                   de você entrar, e a decisão continua sua.
                 </p>
@@ -2712,7 +2713,7 @@ function Index() {
         style={{
           position: "relative",
           overflow: "hidden",
-          background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)",
+          background: "linear-gradient(180deg, #EEF9F6 0%, #FFFFFF 100%)",
         }}
       >
         <img
@@ -2756,9 +2757,9 @@ function Index() {
                 margin: "0",
                 padding: "6px 14px",
                 borderRadius: "999px",
-                background: "#E6F6EE",
-                border: "1px solid #CDEBD8",
-                color: "#006B33",
+                background: "#E6F6F1",
+                border: "1px solid #CDEBE1",
+                color: "#00694F",
                 fontSize: "12px",
                 fontWeight: "700",
                 letterSpacing: "0.12em",
@@ -2775,13 +2776,13 @@ function Index() {
                 fontSize: "clamp(32px, 4.2vw, 48px)",
                 lineHeight: "1.08",
                 letterSpacing: "-0.02em",
-                color: "#13201A",
+                color: "#13201C",
               }}
             >
               Quem move a tribo{" "}
               <span
                 style={{
-                  background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                  background: "linear-gradient(90deg, #00694F 0%, #00AB84 100%)",
                   WebkitBackgroundClip: "text",
                   backgroundClip: "text",
                   color: "transparent",
@@ -2790,7 +2791,7 @@ function Index() {
                 sobe de nível.
               </span>
             </h2>
-            <p style={{ margin: "0", fontSize: "19px", color: "#4F5D55" }}>
+            <p style={{ margin: "0", fontSize: "19px", color: "#4F5D58" }}>
               Organizou o jogo e juntou a galera? Ponto. Entrou em quadra? Ponto também. Os pontos
               levam você de Bronze a Lendário, e o ranking mostra quem faz o jogo acontecer.
             </p>
@@ -2800,9 +2801,9 @@ function Index() {
                   flex: "1 1 180px",
                   padding: "18px 22px",
                   borderRadius: "20px",
-                  background: "linear-gradient(135deg, #006B33 0%, #008A42 60%, #00A850 100%)",
+                  background: "linear-gradient(135deg, #00694F 0%, #008A6A 60%, #00AB84 100%)",
                   color: "#FFFFFF",
-                  boxShadow: "0 16px 34px -18px rgba(0,168,80,0.7)",
+                  boxShadow: "0 16px 34px -18px rgba(0,171,132,0.7)",
                 }}
               >
                 <div
@@ -2823,9 +2824,9 @@ function Index() {
                   flex: "1 1 180px",
                   padding: "18px 22px",
                   borderRadius: "20px",
-                  background: "linear-gradient(135deg, #006B33 0%, #008A42 60%, #00A850 100%)",
+                  background: "linear-gradient(135deg, #00694F 0%, #008A6A 60%, #00AB84 100%)",
                   color: "#FFFFFF",
-                  boxShadow: "0 16px 34px -18px rgba(0,168,80,0.7)",
+                  boxShadow: "0 16px 34px -18px rgba(0,171,132,0.7)",
                 }}
               >
                 <div
@@ -2855,7 +2856,7 @@ function Index() {
                   padding: "14px 16px",
                   borderRadius: "16px",
                   background: "#FFFFFF",
-                  border: "1px solid #E3F1E8",
+                  border: "1px solid #E3F1EC",
                 }}
               >
                 <div
@@ -2872,14 +2873,14 @@ function Index() {
                   ></span>
                   Bronze
                 </div>
-                <div style={{ fontSize: "14px", color: "#4F5D55" }}>0 a 49 pts</div>
+                <div style={{ fontSize: "14px", color: "#4F5D58" }}>0 a 49 pts</div>
               </div>
               <div
                 style={{
                   padding: "14px 16px",
                   borderRadius: "16px",
                   background: "#FFFFFF",
-                  border: "1px solid #E3F1E8",
+                  border: "1px solid #E3F1EC",
                 }}
               >
                 <div
@@ -2896,14 +2897,14 @@ function Index() {
                   ></span>
                   Prata
                 </div>
-                <div style={{ fontSize: "14px", color: "#4F5D55" }}>50 a 149 pts</div>
+                <div style={{ fontSize: "14px", color: "#4F5D58" }}>50 a 149 pts</div>
               </div>
               <div
                 style={{
                   padding: "14px 16px",
                   borderRadius: "16px",
                   background: "#FFFFFF",
-                  border: "1px solid #E3F1E8",
+                  border: "1px solid #E3F1EC",
                 }}
               >
                 <div
@@ -2920,14 +2921,14 @@ function Index() {
                   ></span>
                   Ouro
                 </div>
-                <div style={{ fontSize: "14px", color: "#4F5D55" }}>150 a 349 pts</div>
+                <div style={{ fontSize: "14px", color: "#4F5D58" }}>150 a 349 pts</div>
               </div>
               <div
                 style={{
                   padding: "14px 16px",
                   borderRadius: "16px",
                   background: "#FFFFFF",
-                  border: "1px solid #E3F1E8",
+                  border: "1px solid #E3F1EC",
                 }}
               >
                 <div
@@ -2940,13 +2941,13 @@ function Index() {
                       height: "12px",
                       boxSizing: "border-box",
                       borderRadius: "50%",
-                      background: "#00A850",
-                      border: "2px solid #006B33",
+                      background: "#00AB84",
+                      border: "2px solid #00694F",
                     }}
                   ></span>
                   Lendário
                 </div>
-                <div style={{ fontSize: "14px", color: "#4F5D55" }}>350 pts ou mais</div>
+                <div style={{ fontSize: "14px", color: "#4F5D58" }}>350 pts ou mais</div>
               </div>
             </div>
             <a
@@ -2960,12 +2961,12 @@ function Index() {
                 minHeight: "52px",
                 padding: "0 26px",
                 borderRadius: "999px",
-                background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                background: "linear-gradient(135deg, #00694F 0%, #008A6A 55%, #00AB84 100%)",
                 color: "#FFFFFF",
                 textDecoration: "none",
                 fontWeight: "700",
                 fontSize: "17px",
-                boxShadow: "0 14px 30px -14px rgba(0,168,80,0.7)",
+                boxShadow: "0 14px 30px -14px rgba(0,171,132,0.7)",
               }}
             >
               Começar a pontuar{" "}
@@ -2991,8 +2992,8 @@ function Index() {
                 padding: "24px",
                 borderRadius: "28px",
                 background: "#FFFFFF",
-                border: "1px solid #DCEFE3",
-                boxShadow: "0 30px 70px -26px rgba(0,168,80,0.45)",
+                border: "1px solid #DCEFE8",
+                boxShadow: "0 30px 70px -26px rgba(0,171,132,0.45)",
               }}
             >
               <div
@@ -3002,7 +3003,7 @@ function Index() {
                   alignItems: "center",
                   gap: "12px",
                   paddingBottom: "14px",
-                  borderBottom: "1px solid #E3F1E8",
+                  borderBottom: "1px solid #E3F1EC",
                 }}
               >
                 <span
@@ -3014,7 +3015,7 @@ function Index() {
                     fontWeight: "800",
                     fontSize: "22px",
                     letterSpacing: "-0.02em",
-                    color: "#13201A",
+                    color: "#13201C",
                   }}
                 >
                   <span
@@ -3022,8 +3023,8 @@ function Index() {
                       width: "36px",
                       height: "36px",
                       borderRadius: "12px",
-                      background: "#E6F6EE",
-                      color: "#008A42",
+                      background: "#E6F6F1",
+                      color: "#008A6A",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -3046,7 +3047,7 @@ function Index() {
                   </span>
                   Ranking
                 </span>
-                <span style={{ fontSize: "13px", color: "#63716A" }}>pontos acumulados</span>
+                <span style={{ fontSize: "13px", color: "#63716C" }}>pontos acumulados</span>
               </div>
               <div
                 style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "14px" }}
@@ -3058,7 +3059,7 @@ function Index() {
                     gap: "14px",
                     padding: "12px 14px",
                     borderRadius: "16px",
-                    background: "#E6F6EE",
+                    background: "#E6F6F1",
                   }}
                 >
                   <span
@@ -3067,7 +3068,7 @@ function Index() {
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
                       fontSize: "24px",
-                      color: "#006B33",
+                      color: "#00694F",
                     }}
                   >
                     1
@@ -3078,7 +3079,7 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#006B33",
+                      background: "#00694F",
                       color: "#FFFFFF",
                       display: "flex",
                       alignItems: "center",
@@ -3118,7 +3119,7 @@ function Index() {
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
                       fontSize: "19px",
-                      color: "#006B33",
+                      color: "#00694F",
                     }}
                   >
                     186 pts
@@ -3131,7 +3132,7 @@ function Index() {
                     gap: "14px",
                     padding: "12px 14px",
                     borderRadius: "16px",
-                    background: "#F5FBF7",
+                    background: "#F5FBF9",
                   }}
                 >
                   <span
@@ -3140,7 +3141,7 @@ function Index() {
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
                       fontSize: "24px",
-                      color: "#33413A",
+                      color: "#33413C",
                     }}
                   >
                     2
@@ -3151,8 +3152,8 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#E6F6EE",
-                      color: "#006B33",
+                      background: "#E6F6F1",
+                      color: "#00694F",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -3191,7 +3192,7 @@ function Index() {
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
                       fontSize: "19px",
-                      color: "#13201A",
+                      color: "#13201C",
                     }}
                   >
                     142 pts
@@ -3204,7 +3205,7 @@ function Index() {
                     gap: "14px",
                     padding: "12px 14px",
                     borderRadius: "16px",
-                    background: "#F5FBF7",
+                    background: "#F5FBF9",
                   }}
                 >
                   <span
@@ -3213,7 +3214,7 @@ function Index() {
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
                       fontSize: "24px",
-                      color: "#33413A",
+                      color: "#33413C",
                     }}
                   >
                     3
@@ -3224,8 +3225,8 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#E6F6EE",
-                      color: "#006B33",
+                      background: "#E6F6F1",
+                      color: "#00694F",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -3264,7 +3265,7 @@ function Index() {
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
                       fontSize: "19px",
-                      color: "#13201A",
+                      color: "#13201C",
                     }}
                   >
                     98 pts
@@ -3277,7 +3278,7 @@ function Index() {
                     gap: "14px",
                     padding: "12px 14px",
                     borderRadius: "16px",
-                    background: "#F5FBF7",
+                    background: "#F5FBF9",
                   }}
                 >
                   <span
@@ -3286,7 +3287,7 @@ function Index() {
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
                       fontSize: "24px",
-                      color: "#33413A",
+                      color: "#33413C",
                     }}
                   >
                     4
@@ -3297,8 +3298,8 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#E6F6EE",
-                      color: "#006B33",
+                      background: "#E6F6F1",
+                      color: "#00694F",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -3337,14 +3338,14 @@ function Index() {
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
                       fontSize: "19px",
-                      color: "#13201A",
+                      color: "#13201C",
                     }}
                   >
                     46 pts
                   </span>
                 </div>
               </div>
-              <p style={{ margin: "12px 0 0", fontSize: "13px", color: "#63716A" }}>
+              <p style={{ margin: "12px 0 0", fontSize: "13px", color: "#63716C" }}>
                 Exemplo ilustrativo, dados fictícios.
               </p>
             </div>
@@ -3376,9 +3377,9 @@ function Index() {
                 margin: "0",
                 padding: "6px 14px",
                 borderRadius: "999px",
-                background: "#E6F6EE",
-                border: "1px solid #CDEBD8",
-                color: "#006B33",
+                background: "#E6F6F1",
+                border: "1px solid #CDEBE1",
+                color: "#00694F",
                 fontSize: "12px",
                 fontWeight: "700",
                 letterSpacing: "0.12em",
@@ -3395,7 +3396,7 @@ function Index() {
                 fontSize: "clamp(32px, 4.2vw, 48px)",
                 lineHeight: "1.08",
                 letterSpacing: "-0.02em",
-                color: "#13201A",
+                color: "#13201C",
               }}
             >
               Gente jogando mais, quadra mais cheia.
@@ -3416,23 +3417,23 @@ function Index() {
                 gap: "14px",
                 padding: "28px",
                 borderRadius: "24px",
-                background: "#F5FBF7",
-                border: "1px solid #E3F1E8",
+                background: "#F5FBF9",
+                border: "1px solid #E3F1EC",
               }}
             >
               <span
                 style={{
                   padding: "5px 12px",
                   borderRadius: "999px",
-                  background: "#E6F6EE",
-                  color: "#006B33",
+                  background: "#E6F6F1",
+                  color: "#00694F",
                   fontSize: "13px",
                   fontWeight: "700",
                 }}
               >
                 Jogador
               </span>
-              <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.5", color: "#13201A" }}>
+              <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.5", color: "#13201C" }}>
                 Convidado por um amigo, virou jogo fixo em duas semanas e nunca mais ficou sem
                 dupla.
               </p>
@@ -3445,23 +3446,23 @@ function Index() {
                 gap: "14px",
                 padding: "28px",
                 borderRadius: "24px",
-                background: "#F5FBF7",
-                border: "1px solid #E3F1E8",
+                background: "#F5FBF9",
+                border: "1px solid #E3F1EC",
               }}
             >
               <span
                 style={{
                   padding: "5px 12px",
                   borderRadius: "999px",
-                  background: "#E6F6EE",
-                  color: "#006B33",
+                  background: "#E6F6F1",
+                  color: "#00694F",
                   fontSize: "13px",
                   fontWeight: "700",
                 }}
               >
                 Professor
               </span>
-              <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.5", color: "#13201A" }}>
+              <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.5", color: "#13201C" }}>
                 Professor coloca os alunos pra treinarem entre si fora da aula: a evolução acelera e
                 ninguém abandona o esporte.
               </p>
@@ -3474,23 +3475,23 @@ function Index() {
                 gap: "14px",
                 padding: "28px",
                 borderRadius: "24px",
-                background: "#F5FBF7",
-                border: "1px solid #E3F1E8",
+                background: "#F5FBF9",
+                border: "1px solid #E3F1EC",
               }}
             >
               <span
                 style={{
                   padding: "5px 12px",
                   borderRadius: "999px",
-                  background: "#E6F6EE",
-                  color: "#006B33",
+                  background: "#E6F6F1",
+                  color: "#00694F",
                   fontSize: "13px",
                   fontWeight: "700",
                 }}
               >
                 Dono de arena
               </span>
-              <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.5", color: "#13201A" }}>
+              <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.5", color: "#13201C" }}>
                 Dono de arena divulga o horário vago direto na tribo: o período que era morto vira o
                 mais disputado.
               </p>
@@ -3500,7 +3501,7 @@ function Index() {
       </section>
       <section
         id="loja"
-        style={{ background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)" }}
+        style={{ background: "linear-gradient(180deg, #EEF9F6 0%, #FFFFFF 100%)" }}
       >
         <div
           style={{
@@ -3521,8 +3522,8 @@ function Index() {
               borderRadius: "32px",
               overflow: "hidden",
               background: "#FFFFFF",
-              border: "1px solid #DCEFE3",
-              boxShadow: "0 24px 60px -30px rgba(0,168,80,0.45)",
+              border: "1px solid #DCEFE8",
+              boxShadow: "0 24px 60px -30px rgba(0,171,132,0.45)",
             }}
           >
             <div
@@ -3534,7 +3535,7 @@ function Index() {
                 alignItems: "center",
                 justifyContent: "center",
                 padding: "40px",
-                background: "#00A850",
+                background: "#00AB84",
               }}
             >
               <img
@@ -3559,9 +3560,9 @@ function Index() {
                   margin: "0",
                   padding: "6px 14px",
                   borderRadius: "999px",
-                  background: "#E6F6EE",
-                  border: "1px solid #CDEBD8",
-                  color: "#006B33",
+                  background: "#E6F6F1",
+                  border: "1px solid #CDEBE1",
+                  color: "#00694F",
                   fontSize: "12px",
                   fontWeight: "700",
                   letterSpacing: "0.12em",
@@ -3578,12 +3579,12 @@ function Index() {
                   fontSize: "clamp(28px, 3.4vw, 40px)",
                   lineHeight: "1.1",
                   letterSpacing: "-0.02em",
-                  color: "#13201A",
+                  color: "#13201C",
                 }}
               >
                 O clube é da tribo. A loja está aqui quando a raquete pedir.
               </h2>
-              <p style={{ margin: "0", fontSize: "17px", color: "#4F5D55" }}>
+              <p style={{ margin: "0", fontSize: "17px", color: "#4F5D58" }}>
                 O Dekaw nasceu dentro da loja Dekaw, representante oficial HEAD no Brasil para beach
                 tennis, padel, squash e pickleball. Por isso o app é e continua gratuito: quem joga
                 mais evolui mais. E quando chega a hora de trocar a raquete, o overgrip ou a bolsa,
@@ -3600,8 +3601,8 @@ function Index() {
                   minHeight: "50px",
                   padding: "0 24px",
                   borderRadius: "999px",
-                  border: "1.5px solid #BFE3CC",
-                  color: "#006B33",
+                  border: "1.5px solid #BFE3D7",
+                  color: "#00694F",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "16px",
@@ -3637,7 +3638,7 @@ function Index() {
                 padding: "20px 22px",
                 borderRadius: "20px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
+                border: "1px solid #E3F1EC",
               }}
             >
               <div
@@ -3647,12 +3648,12 @@ function Index() {
                   fontSize: "24px",
                   lineHeight: "1.1",
                   letterSpacing: "-0.02em",
-                  color: "#006B33",
+                  color: "#00694F",
                 }}
               >
                 Grátis
               </div>
-              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D55" }}>
+              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D58" }}>
                 O app é e continua gratuito.
               </div>
             </div>
@@ -3661,7 +3662,7 @@ function Index() {
                 padding: "20px 22px",
                 borderRadius: "20px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
+                border: "1px solid #E3F1EC",
               }}
             >
               <div
@@ -3671,12 +3672,12 @@ function Index() {
                   fontSize: "24px",
                   lineHeight: "1.1",
                   letterSpacing: "-0.02em",
-                  color: "#006B33",
+                  color: "#00694F",
                 }}
               >
                 Sem anúncio
               </div>
-              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D55" }}>
+              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D58" }}>
                 Nada de propaganda no meio do jogo.
               </div>
             </div>
@@ -3685,7 +3686,7 @@ function Index() {
                 padding: "20px 22px",
                 borderRadius: "20px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
+                border: "1px solid #E3F1EC",
               }}
             >
               <div
@@ -3695,12 +3696,12 @@ function Index() {
                   fontSize: "24px",
                   lineHeight: "1.1",
                   letterSpacing: "-0.02em",
-                  color: "#006B33",
+                  color: "#00694F",
                 }}
               >
                 Sem cobrança
               </div>
-              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D55" }}>
+              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D58" }}>
                 O valor da quadra é combinado entre a galera.
               </div>
             </div>
@@ -3709,7 +3710,7 @@ function Index() {
                 padding: "20px 22px",
                 borderRadius: "20px",
                 background: "#FFFFFF",
-                border: "1px solid #E3F1E8",
+                border: "1px solid #E3F1EC",
               }}
             >
               <div
@@ -3719,19 +3720,19 @@ function Index() {
                   fontSize: "24px",
                   lineHeight: "1.1",
                   letterSpacing: "-0.02em",
-                  color: "#006B33",
+                  color: "#00694F",
                 }}
               >
                 5 esportes
               </div>
-              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D55" }}>
+              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D58" }}>
                 Beach tennis, padel, squash, pickleball e tênis.
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EEF9F2 100%)" }}>
+      <section style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EEF9F6 100%)" }}>
         <div
           style={{
             maxWidth: "980px",
@@ -3758,13 +3759,13 @@ function Index() {
               fontSize: "clamp(36px, 5.4vw, 64px)",
               lineHeight: "1.04",
               letterSpacing: "-0.025em",
-              color: "#13201A",
+              color: "#13201C",
             }}
           >
             A tribo já está jogando.{" "}
             <span
               style={{
-                background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                background: "linear-gradient(90deg, #00694F 0%, #00AB84 100%)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
                 color: "transparent",
@@ -3773,7 +3774,7 @@ function Index() {
               Falta você em quadra.
             </span>
           </h2>
-          <p style={{ margin: "0", maxWidth: "36em", fontSize: "19px", color: "#4F5D55" }}>
+          <p style={{ margin: "0", maxWidth: "36em", fontSize: "19px", color: "#4F5D58" }}>
             Crie sua conta e entre numa tribo, ou monte a sua e chame a galera. Recebeu um convite?
             Abra o link que te mandaram: ele te leva direto pra tribo certa.
           </p>
@@ -3788,12 +3789,12 @@ function Index() {
                 minHeight: "52px",
                 padding: "0 26px",
                 borderRadius: "999px",
-                background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                background: "linear-gradient(135deg, #00694F 0%, #008A6A 55%, #00AB84 100%)",
                 color: "#FFFFFF",
                 textDecoration: "none",
                 fontWeight: "700",
                 fontSize: "17px",
-                boxShadow: "0 14px 30px -14px rgba(0,168,80,0.7)",
+                boxShadow: "0 14px 30px -14px rgba(0,171,132,0.7)",
               }}
             >
               Criar minha conta{" "}
@@ -3821,9 +3822,9 @@ function Index() {
                 minHeight: "52px",
                 padding: "0 24px",
                 borderRadius: "999px",
-                border: "1.5px solid #BFE3CC",
+                border: "1.5px solid #BFE3D7",
                 background: "#FFFFFF",
-                color: "#006B33",
+                color: "#00694F",
                 textDecoration: "none",
                 fontWeight: "700",
                 fontSize: "17px",
@@ -3832,13 +3833,13 @@ function Index() {
               Já tenho conta
             </a>
           </div>
-          <p style={{ margin: "0", fontSize: "14px", color: "#63716A" }}>
+          <p style={{ margin: "0", fontSize: "14px", color: "#63716C" }}>
             Grátis e sem anúncios. Funciona no navegador do celular. App Android em breve.
           </p>
         </div>
       </section>
       <footer style={{ background: "#FFFFFF" }}>
-        <div style={{ position: "relative", overflow: "hidden", background: "#00A850" }}>
+        <div style={{ position: "relative", overflow: "hidden", background: "#00AB84" }}>
           <img
             className="decor"
             src="/logos/simbolo-dekaw-branco.png"
@@ -3877,7 +3878,7 @@ function Index() {
             flexWrap: "wrap",
             justifyContent: "space-between",
             gap: "24px",
-            color: "#4F5D55",
+            color: "#4F5D58",
             fontSize: "15px",
           }}
         >
@@ -3901,7 +3902,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
               }}
             >
@@ -3914,7 +3915,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
               }}
             >
@@ -3927,7 +3928,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
               }}
             >
@@ -3940,7 +3941,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
               }}
             >
@@ -3953,7 +3954,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
               }}
             >
@@ -3966,7 +3967,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "#33413A",
+                color: "#33413C",
                 textDecoration: "none",
               }}
             >
@@ -3974,14 +3975,14 @@ function Index() {
             </a>
           </nav>
         </div>
-        <div style={{ borderTop: "1px solid #E3F1E8" }}>
+        <div style={{ borderTop: "1px solid #E3F1EC" }}>
           <div
             style={{
               maxWidth: "1200px",
               margin: "0 auto",
               padding: "16px clamp(16px, 5vw, 64px)",
               fontSize: "13px",
-              color: "#63716A",
+              color: "#63716C",
             }}
           >
             © 2026 DEKAW
