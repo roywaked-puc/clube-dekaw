@@ -1,22 +1,25 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 /*
- * Landing do Clube DEKAW (clube.dekaw.com.br) — versão 2, 03/10/2026.
+ * Landing do Clube DEKAW (clube.dekaw.com.br) — versão 3, 03/10/2026.
  *
- * Regras de conteúdo (bater com o app em app.dekaw.com.br, ver BIBLIA.md):
+ * Regras de conteúdo (bater com o app em app.dekaw.com.br, ver README.md):
  * - Pontos: organizar jogo +10, jogar +2. Níveis Bronze 0–49, Prata 50–149,
  *   Ouro 150–349, Lendário 350+. Sem prêmio e sem temporada.
  * - Conta aberta e grátis; cada tribo escolhe: aberta, pedido de entrada ou
  *   só por convite. Não dizer "clube fechado, só por convite".
  * - Chat é da partida (existe depois que o jogo é criado).
  * - Professor e Dono de quadra: texto mantido por decisão do dono.
- * - Cores: só verdes DEKAW (#00A850, #004D25, fundo #EBF8F1). Sem preto.
+ * - Cores: verde DEKAW #00A850 (o mesmo do app) como principal, #006B33 pra
+ *   texto pequeno verde, fundos claros (#EEF9F2 → branco). Sem seção escura.
+ * - Logos em /public/logos (aplicadas em #00A850).
  */
 
 const TITLE = "DEKAW · Donos da Bola";
 const DESCRIPTION =
   "Organize jogos de beach tennis, padel, squash, pickleball e tênis com a sua tribo. Você chama a galera e o jogo acontece. Grátis e sem anúncios.";
 const URL = "https://clube.dekaw.com.br/";
+const OG_IMAGE = "https://clube.dekaw.com.br/og-dekaw.png";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -28,9 +31,14 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { property: "og:image:alt", content: "Logo DEKAW, Você Dono da Bola, sobre fundo verde" },
+      { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
     links: [{ rel: "canonical", href: URL }],
   }),
@@ -43,7 +51,7 @@ function Index() {
         width: "100%",
         minHeight: "100vh",
         background: "#FFFFFF",
-        color: "#1A1A1A",
+        color: "#13201A",
         fontFamily: "'Instrument Sans', system-ui, sans-serif",
         fontSize: "17px",
         lineHeight: "1.55",
@@ -54,8 +62,9 @@ function Index() {
           position: "sticky",
           top: "0",
           zIndex: "30",
-          background: "#004D25",
-          borderBottom: "1px solid rgba(255,255,255,0.1)",
+          background: "rgba(255,255,255,0.92)",
+          backdropFilter: "blur(10px)",
+          borderBottom: "1px solid #E3F1E8",
         }}
       >
         <div
@@ -71,38 +80,20 @@ function Index() {
         >
           <a
             href="#topo"
-            aria-label="DEKAW Donos da Bola, voltar ao início"
+            aria-label="DEKAW, voltar ao início"
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "10px",
               minHeight: "44px",
               textDecoration: "none",
             }}
           >
-            <span
-              style={{
-                fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "118%",
-                fontSize: "24px",
-                letterSpacing: "0.03em",
-                color: "#FFFFFF",
-              }}
-            >
-              DEKAW
-            </span>
-            <span
-              className="brand-sub"
-              style={{
-                fontSize: "13px",
-                fontWeight: "600",
-                letterSpacing: "0.02em",
-                color: "#8BE3B0",
-              }}
-            >
-              Donos da Bola
-            </span>
+            <img
+              className="hdr-logo"
+              src="/logos/logo-dekaw-verde.png"
+              alt="DEKAW, Você Dono da Bola"
+              style={{ display: "block", height: "52px", width: "auto" }}
+            />
           </a>
           <nav
             className="nav-links"
@@ -113,7 +104,7 @@ function Index() {
               className="navlink"
               href="#como-funciona"
               style={{
-                color: "rgba(255,255,255,0.85)",
+                color: "#33413A",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "500",
@@ -125,7 +116,7 @@ function Index() {
               className="navlink"
               href="#para-quem-e"
               style={{
-                color: "rgba(255,255,255,0.85)",
+                color: "#33413A",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "500",
@@ -137,7 +128,7 @@ function Index() {
               className="navlink"
               href="#ranking"
               style={{
-                color: "rgba(255,255,255,0.85)",
+                color: "#33413A",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "500",
@@ -149,7 +140,7 @@ function Index() {
               className="navlink"
               href="#loja"
               style={{
-                color: "rgba(255,255,255,0.85)",
+                color: "#33413A",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "500",
@@ -160,14 +151,14 @@ function Index() {
           </nav>
           <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
             <a
-              className="navlink"
+              className="navlink hdr-entrar"
               href="https://app.dekaw.com.br/login"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 minHeight: "44px",
                 padding: "0 12px",
-                color: "#FFFFFF",
+                color: "#006B33",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "600",
@@ -182,13 +173,14 @@ function Index() {
                 display: "inline-flex",
                 alignItems: "center",
                 minHeight: "44px",
-                padding: "0 18px",
-                borderRadius: "12px",
-                background: "#00A850",
-                color: "#062E1A",
+                padding: "0 20px",
+                borderRadius: "999px",
+                background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                color: "#FFFFFF",
                 textDecoration: "none",
                 fontSize: "15px",
                 fontWeight: "700",
+                boxShadow: "0 10px 24px -12px rgba(0,168,80,0.6)",
               }}
             >
               Criar conta
@@ -201,65 +193,29 @@ function Index() {
         style={{
           position: "relative",
           overflow: "hidden",
-          background: "#00A850",
-          color: "#062E1A",
+          background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)",
         }}
       >
-        <div
-          className="court-decor"
+        <img
+          className="decor"
+          src="/logos/simbolo-dekaw-verde.png"
+          alt=""
           aria-hidden="true"
           style={{
             position: "absolute",
-            top: "48px",
-            right: "-170px",
+            right: "-140px",
+            top: "30px",
             width: "640px",
-            height: "900px",
-            border: "3px solid rgba(255,255,255,0.32)",
+            height: "auto",
+            opacity: "0.06",
           }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              left: "0",
-              right: "0",
-              top: "50%",
-              borderTop: "4px solid rgba(255,255,255,0.6)",
-            }}
-          ></div>
-          <div
-            style={{
-              position: "absolute",
-              left: "0",
-              right: "0",
-              top: "22%",
-              borderTop: "3px solid rgba(255,255,255,0.32)",
-            }}
-          ></div>
-          <div
-            style={{
-              position: "absolute",
-              left: "0",
-              right: "0",
-              top: "78%",
-              borderTop: "3px solid rgba(255,255,255,0.32)",
-            }}
-          ></div>
-          <div
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: "22%",
-              bottom: "22%",
-              borderLeft: "3px solid rgba(255,255,255,0.32)",
-            }}
-          ></div>
-        </div>
+        />
         <div
           style={{
             position: "relative",
             maxWidth: "1200px",
             margin: "0 auto",
-            padding: "clamp(56px, 8vw, 104px) clamp(16px, 5vw, 64px) clamp(64px, 9vw, 120px)",
+            padding: "clamp(48px, 7vw, 96px) clamp(16px, 5vw, 64px) clamp(56px, 8vw, 112px)",
             display: "flex",
             flexWrap: "wrap",
             alignItems: "center",
@@ -273,18 +229,21 @@ function Index() {
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
-              gap: "24px",
+              gap: "22px",
             }}
           >
             <p
               style={{
                 margin: "0",
                 padding: "6px 14px",
-                borderRadius: "20px",
-                background: "rgba(255,255,255,0.28)",
-                color: "#062E1A",
-                fontSize: "14px",
+                borderRadius: "999px",
+                background: "#E6F6EE",
+                border: "1px solid #CDEBD8",
+                color: "#006B33",
+                fontSize: "12px",
                 fontWeight: "700",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
               }}
             >
               Grátis · beach tennis, padel, squash, pickleball e tênis
@@ -293,18 +252,26 @@ function Index() {
               style={{
                 margin: "0",
                 fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "72%",
-                textTransform: "uppercase",
-                fontSize: "clamp(46px, 7vw, 88px)",
-                lineHeight: "0.9",
-                letterSpacing: "-0.01em",
-                color: "#062E1A",
+                fontWeight: "800",
+                fontSize: "clamp(42px, 6vw, 72px)",
+                lineHeight: "1.02",
+                letterSpacing: "-0.025em",
+                color: "#13201A",
               }}
             >
-              Nunca mais fique sem ter <span style={{ color: "#FFFFFF" }}>com quem jogar.</span>
+              Nunca mais fique sem ter{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                com quem jogar.
+              </span>
             </h1>
-            <p style={{ margin: "0", maxWidth: "34em", fontSize: "19px", color: "#062E1A" }}>
+            <p style={{ margin: "0", maxWidth: "34em", fontSize: "19px", color: "#4F5D55" }}>
               O Dekaw é o clube digital onde amadores de esportes de raquete se organizam em tribos
               de confiança. Você chama a galera, a tribo recebe o aviso e quem topa confirma
               presença. Sem grupo lotado e sem passar telefone pra desconhecido.
@@ -318,13 +285,14 @@ function Index() {
                   alignItems: "center",
                   gap: "10px",
                   minHeight: "52px",
-                  padding: "0 24px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  padding: "0 26px",
+                  borderRadius: "999px",
+                  background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
                   color: "#FFFFFF",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "17px",
+                  boxShadow: "0 14px 30px -14px rgba(0,168,80,0.7)",
                 }}
               >
                 Criar minha conta{" "}
@@ -350,10 +318,11 @@ function Index() {
                   display: "inline-flex",
                   alignItems: "center",
                   minHeight: "52px",
-                  padding: "0 22px",
-                  borderRadius: "12px",
-                  border: "2px solid #062E1A",
-                  color: "#062E1A",
+                  padding: "0 24px",
+                  borderRadius: "999px",
+                  border: "1.5px solid #BFE3CC",
+                  background: "#FFFFFF",
+                  color: "#006B33",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "17px",
@@ -370,7 +339,7 @@ function Index() {
                 alignItems: "flex-start",
                 maxWidth: "30em",
                 fontSize: "15px",
-                color: "#062E1A",
+                color: "#4F5D55",
               }}
             >
               <svg
@@ -378,8 +347,8 @@ function Index() {
                 height="18"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="currentColor"
-                strokeWidth="2.2"
+                stroke="#00A850"
+                strokeWidth="2.4"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 aria-hidden="true"
@@ -389,8 +358,8 @@ function Index() {
                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
               </svg>
               <span>
-                <strong style={{ fontWeight: "700" }}>Recebeu um convite?</strong> Abra o link que
-                te mandaram: ele já te leva direto pra tribo certa.
+                <strong style={{ fontWeight: "700", color: "#13201A" }}>Recebeu um convite?</strong>{" "}
+                Abra o link que te mandaram: ele já te leva direto pra tribo certa.
               </span>
             </p>
           </div>
@@ -400,15 +369,16 @@ function Index() {
               aria-label="Ilustração da tela de um jogo no app: quem vai jogar, quem convidou cada pessoa e o chat da partida"
               style={{
                 background: "#FFFFFF",
-                color: "#1A1A1A",
-                borderRadius: "16px",
+                color: "#13201A",
+                borderRadius: "28px",
+                border: "1px solid #D7EDDF",
                 overflow: "hidden",
-                boxShadow: "0 30px 70px rgba(0,61,30,0.4)",
+                boxShadow: "0 30px 70px -24px rgba(0,168,80,0.45)",
               }}
             >
               <div
                 style={{
-                  background: "#004D25",
+                  background: "#00A850",
                   padding: "14px 18px",
                   display: "flex",
                   flexWrap: "wrap",
@@ -418,9 +388,9 @@ function Index() {
                 <span
                   style={{
                     padding: "4px 10px",
-                    borderRadius: "20px",
-                    background: "#00A850",
-                    color: "#062E1A",
+                    borderRadius: "999px",
+                    background: "#006B33",
+                    color: "#FFFFFF",
                     fontSize: "12px",
                     fontWeight: "700",
                     letterSpacing: "0.06em",
@@ -432,9 +402,9 @@ function Index() {
                 <span
                   style={{
                     padding: "4px 10px",
-                    borderRadius: "20px",
-                    background: "rgba(255,255,255,0.9)",
-                    color: "#004D25",
+                    borderRadius: "999px",
+                    background: "#FFFFFF",
+                    color: "#006B33",
                     fontSize: "12px",
                     fontWeight: "700",
                     letterSpacing: "0.06em",
@@ -446,9 +416,9 @@ function Index() {
                 <span
                   style={{
                     padding: "4px 10px",
-                    borderRadius: "20px",
-                    background: "rgba(255,255,255,0.9)",
-                    color: "#004D25",
+                    borderRadius: "999px",
+                    background: "#FFFFFF",
+                    color: "#006B33",
                     fontSize: "12px",
                     fontWeight: "700",
                     letterSpacing: "0.06em",
@@ -465,7 +435,7 @@ function Index() {
                     fontWeight: "600",
                     letterSpacing: "0.08em",
                     textTransform: "uppercase",
-                    color: "#6B6B6B",
+                    color: "#63716A",
                   }}
                 >
                   Tribo Amigos do Léo
@@ -477,7 +447,8 @@ function Index() {
                     fontWeight: "800",
                     fontSize: "28px",
                     lineHeight: "1.1",
-                    color: "#004D25",
+                    letterSpacing: "-0.02em",
+                    color: "#13201A",
                   }}
                 >
                   Sábado, 08:00
@@ -489,7 +460,7 @@ function Index() {
                     alignItems: "center",
                     gap: "6px",
                     fontSize: "14px",
-                    color: "#4A4A4A",
+                    color: "#4F5D55",
                   }}
                 >
                   <svg
@@ -497,7 +468,7 @@ function Index() {
                     height="16"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="currentColor"
+                    stroke="#00A850"
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -519,11 +490,11 @@ function Index() {
                     fontWeight: "700",
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
-                    color: "#1A1A1A",
+                    color: "#13201A",
                   }}
                 >
                   <span>Quem vai jogar</span>
-                  <span style={{ color: "#004D25" }}>3 de 4</span>
+                  <span style={{ color: "#006B33" }}>3 de 4</span>
                 </div>
                 <div
                   style={{
@@ -540,7 +511,7 @@ function Index() {
                         height: "38px",
                         flex: "none",
                         borderRadius: "50%",
-                        background: "#004D25",
+                        background: "#006B33",
                         color: "#FFFFFF",
                         display: "flex",
                         alignItems: "center",
@@ -561,14 +532,14 @@ function Index() {
                       }}
                     >
                       <span style={{ fontWeight: "600", fontSize: "15px" }}>Léo A.</span>
-                      <span style={{ fontSize: "13px", color: "#6B6B6B" }}>Organizador</span>
+                      <span style={{ fontSize: "13px", color: "#63716A" }}>Organizador</span>
                     </span>
                     <span
                       style={{
                         padding: "4px 8px",
-                        borderRadius: "20px",
-                        background: "rgba(0,168,80,0.12)",
-                        color: "#004D25",
+                        borderRadius: "999px",
+                        background: "#E6F6EE",
+                        color: "#006B33",
                         fontSize: "11px",
                         fontWeight: "700",
                       }}
@@ -583,8 +554,8 @@ function Index() {
                         height: "38px",
                         flex: "none",
                         borderRadius: "50%",
-                        background: "#00A850",
-                        color: "#062E1A",
+                        background: "#E6F6EE",
+                        color: "#006B33",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -604,7 +575,7 @@ function Index() {
                       }}
                     >
                       <span style={{ fontWeight: "600", fontSize: "15px" }}>Marina P.</span>
-                      <span style={{ fontSize: "13px", color: "#6B6B6B" }}>convidada do Léo</span>
+                      <span style={{ fontSize: "13px", color: "#63716A" }}>convidada do Léo</span>
                     </span>
                   </div>
                   <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -614,8 +585,8 @@ function Index() {
                         height: "38px",
                         flex: "none",
                         borderRadius: "50%",
-                        background: "#DDF2E6",
-                        color: "#004D25",
+                        background: "#F1F5F4",
+                        color: "#33413A",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -635,7 +606,7 @@ function Index() {
                       }}
                     >
                       <span style={{ fontWeight: "600", fontSize: "15px" }}>Bia T.</span>
-                      <span style={{ fontSize: "13px", color: "#6B6B6B" }}>
+                      <span style={{ fontSize: "13px", color: "#63716A" }}>
                         convidada da Marina
                       </span>
                     </span>
@@ -648,8 +619,8 @@ function Index() {
                         flex: "none",
                         boxSizing: "border-box",
                         borderRadius: "50%",
-                        border: "2px dashed #9FD6B8",
-                        color: "#004D25",
+                        border: "2px dashed #A3DCB9",
+                        color: "#00A850",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -670,7 +641,7 @@ function Index() {
                         <path d="M5 12h14"></path>
                       </svg>
                     </span>
-                    <span style={{ flex: "1", minWidth: "0", fontSize: "15px", color: "#6B6B6B" }}>
+                    <span style={{ flex: "1", minWidth: "0", fontSize: "15px", color: "#63716A" }}>
                       Vaga aberta
                     </span>
                   </div>
@@ -680,8 +651,8 @@ function Index() {
                 style={{
                   margin: "16px 20px 0",
                   padding: "12px 14px",
-                  borderRadius: "12px",
-                  background: "#EBF8F1",
+                  borderRadius: "16px",
+                  background: "#EEF9F2",
                   fontSize: "14px",
                 }}
               >
@@ -691,7 +662,7 @@ function Index() {
                     fontWeight: "700",
                     letterSpacing: "0.06em",
                     textTransform: "uppercase",
-                    color: "#004D25",
+                    color: "#006B33",
                   }}
                 >
                   Chat do jogo
@@ -708,9 +679,9 @@ function Index() {
                     alignItems: "center",
                     justifyContent: "center",
                     height: "48px",
-                    borderRadius: "12px",
-                    background: "#00A850",
-                    color: "#062E1A",
+                    borderRadius: "999px",
+                    background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                    color: "#FFFFFF",
                     fontWeight: "700",
                   }}
                 >
@@ -723,8 +694,7 @@ function Index() {
                 margin: "12px 0 0",
                 textAlign: "center",
                 fontSize: "13px",
-                fontWeight: "600",
-                color: "#062E1A",
+                color: "#63716A",
               }}
             >
               Ilustração com dados fictícios
@@ -740,18 +710,30 @@ function Index() {
             padding: "clamp(64px, 8vw, 104px) clamp(16px, 5vw, 64px)",
             display: "flex",
             flexDirection: "column",
-            gap: "48px",
+            gap: "44px",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "760px" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "16px",
+              maxWidth: "760px",
+            }}
+          >
             <p
               style={{
                 margin: "0",
-                fontSize: "13px",
+                padding: "6px 14px",
+                borderRadius: "999px",
+                background: "#E6F6EE",
+                border: "1px solid #CDEBD8",
+                color: "#006B33",
+                fontSize: "12px",
                 fontWeight: "700",
-                letterSpacing: "0.14em",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#00A850",
               }}
             >
               O problema
@@ -760,17 +742,16 @@ function Index() {
               style={{
                 margin: "0",
                 fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "75%",
-                textTransform: "uppercase",
-                fontSize: "clamp(38px, 5.2vw, 64px)",
-                lineHeight: "0.95",
-                color: "#004D25",
+                fontWeight: "800",
+                fontSize: "clamp(32px, 4.2vw, 48px)",
+                lineHeight: "1.08",
+                letterSpacing: "-0.02em",
+                color: "#13201A",
               }}
             >
               A raquete está no carro. O que falta é o jogo.
             </h2>
-            <p style={{ margin: "0", fontSize: "19px", color: "#4A4A4A" }}>
+            <p style={{ margin: "0", fontSize: "19px", color: "#4F5D55" }}>
               Quem joga esporte de raquete conhece a rotina: grupo de mensagem lotado, ninguém
               confirma, quadra reservada e alguém desiste na última hora.
             </p>
@@ -788,18 +769,18 @@ function Index() {
                 flexDirection: "column",
                 gap: "14px",
                 padding: "28px",
-                border: "1px solid #D5EBDE",
-                borderRadius: "12px",
+                border: "1px solid #DCEFE3",
+                borderRadius: "24px",
                 background: "#FFFFFF",
               }}
             >
               <span
                 style={{
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "12px",
-                  background: "#00A850",
-                  color: "#FFFFFF",
+                  width: "52px",
+                  height: "52px",
+                  borderRadius: "50%",
+                  background: "#E6F6EE",
+                  color: "#008A42",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -826,15 +807,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "800",
-                  fontSize: "23px",
-                  lineHeight: "1.15",
-                  color: "#004D25",
+                  fontWeight: "700",
+                  fontSize: "21px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Não tenho com quem jogar
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                 Você evoluiu, quer jogar mais vezes na semana, mas sempre depende das mesmas duas
                 pessoas. Quando elas não podem, o jogo morre.
               </p>
@@ -845,18 +827,18 @@ function Index() {
                 flexDirection: "column",
                 gap: "14px",
                 padding: "28px",
-                border: "1px solid #D5EBDE",
-                borderRadius: "12px",
+                border: "1px solid #DCEFE3",
+                borderRadius: "24px",
                 background: "#FFFFFF",
               }}
             >
               <span
                 style={{
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "12px",
-                  background: "#00A850",
-                  color: "#FFFFFF",
+                  width: "52px",
+                  height: "52px",
+                  borderRadius: "50%",
+                  background: "#E6F6EE",
+                  color: "#008A42",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -881,15 +863,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "800",
-                  fontSize: "23px",
-                  lineHeight: "1.15",
-                  color: "#004D25",
+                  fontWeight: "700",
+                  fontSize: "21px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Quadra vazia em horário bom
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                 Donos de quadra veem horários ociosos todos os dias, enquanto tem gente querendo
                 jogar e sem saber que aquele slot está livre.
               </p>
@@ -900,18 +883,18 @@ function Index() {
                 flexDirection: "column",
                 gap: "14px",
                 padding: "28px",
-                border: "1px solid #D5EBDE",
-                borderRadius: "12px",
+                border: "1px solid #DCEFE3",
+                borderRadius: "24px",
                 background: "#FFFFFF",
               }}
             >
               <span
                 style={{
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "12px",
-                  background: "#00A850",
-                  color: "#FFFFFF",
+                  width: "52px",
+                  height: "52px",
+                  borderRadius: "50%",
+                  background: "#E6F6EE",
+                  color: "#008A42",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -935,15 +918,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "800",
-                  fontSize: "23px",
-                  lineHeight: "1.15",
-                  color: "#004D25",
+                  fontWeight: "700",
+                  fontSize: "21px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Insegurança com desconhecido
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                 Marcar com alguém que ninguém conhece, passar telefone, não saber o nível nem se a
                 pessoa aparece. Falta referência de confiança.
               </p>
@@ -951,7 +935,7 @@ function Index() {
           </div>
         </div>
       </section>
-      <section style={{ background: "#EBF8F1" }}>
+      <section style={{ background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)" }}>
         <div
           style={{
             maxWidth: "1200px",
@@ -959,7 +943,7 @@ function Index() {
             padding: "clamp(64px, 8vw, 104px) clamp(16px, 5vw, 64px)",
             display: "flex",
             flexWrap: "wrap",
-            alignItems: "flex-start",
+            alignItems: "center",
             gap: "56px",
           }}
         >
@@ -970,17 +954,21 @@ function Index() {
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
-              gap: "20px",
+              gap: "18px",
             }}
           >
             <p
               style={{
                 margin: "0",
-                fontSize: "13px",
+                padding: "6px 14px",
+                borderRadius: "999px",
+                background: "#E6F6EE",
+                border: "1px solid #CDEBD8",
+                color: "#006B33",
+                fontSize: "12px",
                 fontWeight: "700",
-                letterSpacing: "0.14em",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#004D25",
               }}
             >
               O jeito Dekaw
@@ -989,17 +977,26 @@ function Index() {
               style={{
                 margin: "0",
                 fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "75%",
-                textTransform: "uppercase",
-                fontSize: "clamp(36px, 4.6vw, 56px)",
-                lineHeight: "0.95",
-                color: "#004D25",
+                fontWeight: "800",
+                fontSize: "clamp(32px, 4.2vw, 48px)",
+                lineHeight: "1.08",
+                letterSpacing: "-0.02em",
+                color: "#13201A",
               }}
             >
-              Um clube onde todo mundo tem nome, referência e vontade de jogar.
+              Um clube onde todo mundo tem nome, referência e{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                vontade de jogar.
+              </span>
             </h2>
-            <p style={{ margin: "0", fontSize: "18px", color: "#4A4A4A" }}>
+            <p style={{ margin: "0", fontSize: "18px", color: "#4F5D55" }}>
               O Dekaw não é mais um app de agenda. É a sua tribo organizada: gente apresentada por
               gente, conversa no lugar certo e jogo marcado em minutos.
             </p>
@@ -1185,13 +1182,14 @@ function Index() {
                 alignItems: "center",
                 gap: "10px",
                 minHeight: "52px",
-                padding: "0 24px",
-                borderRadius: "12px",
-                background: "#00A850",
-                color: "#062E1A",
+                padding: "0 26px",
+                borderRadius: "999px",
+                background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                color: "#FFFFFF",
                 textDecoration: "none",
                 fontWeight: "700",
                 fontSize: "17px",
+                boxShadow: "0 14px 30px -14px rgba(0,168,80,0.7)",
               }}
             >
               Criar minha conta{" "}
@@ -1225,19 +1223,20 @@ function Index() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "12px",
-                minHeight: "180px",
+                minHeight: "176px",
                 padding: "24px",
-                borderRadius: "12px",
+                borderRadius: "24px",
                 background: "#FFFFFF",
-                boxShadow: "0 2px 8px rgba(0,77,37,0.08)",
+                border: "1px solid #E3F1E8",
+                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
               }}
             >
               <span
                 style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "14px",
+                  background: "#00A850",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1265,17 +1264,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "80%",
-                  textTransform: "uppercase",
-                  fontSize: "26px",
-                  lineHeight: "1",
-                  color: "#004D25",
+                  fontWeight: "700",
+                  fontSize: "21px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Tribos
               </h3>
-              <p style={{ margin: "0", fontSize: "15px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
                 Seu círculo de jogo, com gente de confiança.
               </p>
             </div>
@@ -1284,19 +1282,20 @@ function Index() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "12px",
-                minHeight: "180px",
+                minHeight: "176px",
                 padding: "24px",
-                borderRadius: "12px",
+                borderRadius: "24px",
                 background: "#FFFFFF",
-                boxShadow: "0 2px 8px rgba(0,77,37,0.08)",
+                border: "1px solid #E3F1E8",
+                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
               }}
             >
               <span
                 style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "14px",
+                  background: "#00A850",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1321,17 +1320,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "80%",
-                  textTransform: "uppercase",
-                  fontSize: "26px",
-                  lineHeight: "1",
-                  color: "#004D25",
+                  fontWeight: "700",
+                  fontSize: "21px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Chat do jogo
               </h3>
-              <p style={{ margin: "0", fontSize: "15px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
                 Combine tudo dentro da partida.
               </p>
             </div>
@@ -1340,19 +1338,20 @@ function Index() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "12px",
-                minHeight: "180px",
+                minHeight: "176px",
                 padding: "24px",
-                borderRadius: "12px",
+                borderRadius: "24px",
                 background: "#FFFFFF",
-                boxShadow: "0 2px 8px rgba(0,77,37,0.08)",
+                border: "1px solid #E3F1E8",
+                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
               }}
             >
               <span
                 style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "14px",
+                  background: "#00A850",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1378,17 +1377,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "80%",
-                  textTransform: "uppercase",
-                  fontSize: "26px",
-                  lineHeight: "1",
-                  color: "#004D25",
+                  fontWeight: "700",
+                  fontSize: "21px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Ranking
               </h3>
-              <p style={{ margin: "0", fontSize: "15px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
                 Pontos e níveis pra quem faz o jogo acontecer.
               </p>
             </div>
@@ -1397,19 +1395,20 @@ function Index() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "12px",
-                minHeight: "180px",
+                minHeight: "176px",
                 padding: "24px",
-                borderRadius: "12px",
+                borderRadius: "24px",
                 background: "#FFFFFF",
-                boxShadow: "0 2px 8px rgba(0,77,37,0.08)",
+                border: "1px solid #E3F1E8",
+                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
               }}
             >
               <span
                 style={{
-                  width: "44px",
-                  height: "44px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  width: "46px",
+                  height: "46px",
+                  borderRadius: "14px",
+                  background: "#00A850",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1436,83 +1435,54 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "80%",
-                  textTransform: "uppercase",
-                  fontSize: "26px",
-                  lineHeight: "1",
-                  color: "#004D25",
+                  fontWeight: "700",
+                  fontSize: "21px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Quadras
               </h3>
-              <p style={{ margin: "0", fontSize: "15px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
                 Horários livres na mão de quem joga.
               </p>
             </div>
           </div>
         </div>
       </section>
-      <section
-        id="como-funciona"
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          background: "#004D25",
-          color: "#FFFFFF",
-        }}
-      >
-        <div
-          className="court-decor"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "-220px",
-            bottom: "-120px",
-            width: "560px",
-            height: "760px",
-            border: "3px solid rgba(255,255,255,0.1)",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              left: "0",
-              right: "0",
-              top: "50%",
-              borderTop: "4px solid rgba(0,168,80,0.6)",
-            }}
-          ></div>
-          <div
-            style={{
-              position: "absolute",
-              left: "50%",
-              top: "22%",
-              bottom: "22%",
-              borderLeft: "3px solid rgba(255,255,255,0.1)",
-            }}
-          ></div>
-        </div>
+      <section id="como-funciona" style={{ background: "#FFFFFF" }}>
         <div
           style={{
-            position: "relative",
             maxWidth: "1200px",
             margin: "0 auto",
             padding: "clamp(64px, 8vw, 104px) clamp(16px, 5vw, 64px)",
             display: "flex",
             flexDirection: "column",
-            gap: "48px",
+            gap: "44px",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "760px" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "16px",
+              maxWidth: "760px",
+            }}
+          >
             <p
               style={{
                 margin: "0",
-                fontSize: "13px",
+                padding: "6px 14px",
+                borderRadius: "999px",
+                background: "#E6F6EE",
+                border: "1px solid #CDEBD8",
+                color: "#006B33",
+                fontSize: "12px",
                 fontWeight: "700",
-                letterSpacing: "0.14em",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#8BE3B0",
               }}
             >
               Como funciona
@@ -1521,12 +1491,11 @@ function Index() {
               style={{
                 margin: "0",
                 fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "75%",
-                textTransform: "uppercase",
-                fontSize: "clamp(38px, 5.2vw, 64px)",
-                lineHeight: "0.95",
-                color: "#FFFFFF",
+                fontWeight: "800",
+                fontSize: "clamp(32px, 4.2vw, 48px)",
+                lineHeight: "1.08",
+                letterSpacing: "-0.02em",
+                color: "#13201A",
               }}
             >
               Três passos entre a tribo e a primeira partida.
@@ -1545,19 +1514,22 @@ function Index() {
                 flexDirection: "column",
                 gap: "12px",
                 padding: "28px",
-                borderRadius: "12px",
-                background: "rgba(255,255,255,0.07)",
-                border: "1px solid rgba(255,255,255,0.16)",
+                borderRadius: "24px",
+                background: "#FFFFFF",
+                border: "1px solid #DCEFE3",
               }}
             >
               <span
                 style={{
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "75%",
-                  fontSize: "64px",
+                  fontWeight: "800",
+                  fontSize: "56px",
                   lineHeight: "1",
-                  color: "#00A850",
+                  letterSpacing: "-0.03em",
+                  background: "linear-gradient(135deg, #00A850 0%, #8FDCB0 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
                 }}
               >
                 01
@@ -1566,14 +1538,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "800",
-                  fontSize: "24px",
-                  lineHeight: "1.15",
+                  fontWeight: "700",
+                  fontSize: "22px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Entre numa tribo
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "rgba(255,255,255,0.85)" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                 Pelo convite de quem já está dentro, pedindo entrada ou numa tribo aberta. Não achou
                 a sua? Crie uma e chame a galera.
               </p>
@@ -1584,19 +1558,22 @@ function Index() {
                 flexDirection: "column",
                 gap: "12px",
                 padding: "28px",
-                borderRadius: "12px",
-                background: "rgba(255,255,255,0.07)",
-                border: "1px solid rgba(255,255,255,0.16)",
+                borderRadius: "24px",
+                background: "#FFFFFF",
+                border: "1px solid #DCEFE3",
               }}
             >
               <span
                 style={{
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "75%",
-                  fontSize: "64px",
+                  fontWeight: "800",
+                  fontSize: "56px",
                   lineHeight: "1",
-                  color: "#00A850",
+                  letterSpacing: "-0.03em",
+                  background: "linear-gradient(135deg, #00A850 0%, #8FDCB0 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
                 }}
               >
                 02
@@ -1605,14 +1582,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "800",
-                  fontSize: "24px",
-                  lineHeight: "1.15",
+                  fontWeight: "700",
+                  fontSize: "22px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Chame a galera
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "rgba(255,255,255,0.85)" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                 Monte o jogo em 3 passos: esporte, nível, dia, horário, quadra e vagas. A tribo é
                 avisada na hora, só quem joga aquele esporte e quer aviso naquele horário.
               </p>
@@ -1623,19 +1602,22 @@ function Index() {
                 flexDirection: "column",
                 gap: "12px",
                 padding: "28px",
-                borderRadius: "12px",
-                background: "rgba(255,255,255,0.07)",
-                border: "1px solid rgba(255,255,255,0.16)",
+                borderRadius: "24px",
+                background: "#FFFFFF",
+                border: "1px solid #DCEFE3",
               }}
             >
               <span
                 style={{
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "75%",
-                  fontSize: "64px",
+                  fontWeight: "800",
+                  fontSize: "56px",
                   lineHeight: "1",
-                  color: "#00A850",
+                  letterSpacing: "-0.03em",
+                  background: "linear-gradient(135deg, #00A850 0%, #8FDCB0 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
                 }}
               >
                 03
@@ -1644,14 +1626,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "800",
-                  fontSize: "24px",
-                  lineHeight: "1.15",
+                  fontWeight: "700",
+                  fontSize: "22px",
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  color: "#13201A",
                 }}
               >
                 Combine e entre em quadra
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "rgba(255,255,255,0.85)" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                 Quem topa confirma presença e garante a vaga. Dúvida de quadra, horário ou quem leva
                 a bolinha? Resolve no chat do jogo.
               </p>
@@ -1664,9 +1648,9 @@ function Index() {
               alignItems: "flex-start",
               gap: "32px",
               padding: "clamp(24px, 4vw, 40px)",
-              borderRadius: "16px",
-              background: "#FFFFFF",
-              color: "#1A1A1A",
+              borderRadius: "28px",
+              background: "linear-gradient(135deg, #E6F6EE 0%, #F5FBF7 100%)",
+              border: "1px solid #DCEFE3",
             }}
           >
             <div
@@ -1681,11 +1665,11 @@ function Index() {
               <p
                 style={{
                   margin: "0",
-                  fontSize: "13px",
+                  fontSize: "12px",
                   fontWeight: "700",
-                  letterSpacing: "0.14em",
+                  letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "#00A850",
+                  color: "#006B33",
                 }}
               >
                 Depois do jogo
@@ -1694,12 +1678,11 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "78%",
-                  textTransform: "uppercase",
-                  fontSize: "34px",
-                  lineHeight: "0.98",
-                  color: "#004D25",
+                  fontWeight: "800",
+                  fontSize: "30px",
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  color: "#13201A",
                 }}
               >
                 Reviva o jogo e feche o dia.
@@ -1718,14 +1701,15 @@ function Index() {
                 <span
                   style={{
                     flex: "none",
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "12px",
-                    background: "#EBF8F1",
-                    color: "#004D25",
+                    width: "42px",
+                    height: "42px",
+                    borderRadius: "50%",
+                    background: "#FFFFFF",
+                    color: "#008A42",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    boxShadow: "0 6px 16px -10px rgba(0,168,80,0.6)",
                   }}
                 >
                   <svg
@@ -1744,10 +1728,8 @@ function Index() {
                   </svg>
                 </span>
                 <span style={{ display: "flex", flexDirection: "column" }}>
-                  <strong style={{ fontWeight: "700", fontSize: "16px", color: "#004D25" }}>
-                    Foto do jogo
-                  </strong>
-                  <span style={{ fontSize: "15px", color: "#4A4A4A" }}>
+                  <strong style={{ fontWeight: "700", fontSize: "16px" }}>Foto do jogo</strong>
+                  <span style={{ fontSize: "15px", color: "#4F5D55" }}>
                     A galera sobe a foto do dia.
                   </span>
                 </span>
@@ -1756,14 +1738,15 @@ function Index() {
                 <span
                   style={{
                     flex: "none",
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "12px",
-                    background: "#EBF8F1",
-                    color: "#004D25",
+                    width: "42px",
+                    height: "42px",
+                    borderRadius: "50%",
+                    background: "#FFFFFF",
+                    color: "#008A42",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    boxShadow: "0 6px 16px -10px rgba(0,168,80,0.6)",
                   }}
                 >
                   <svg
@@ -1782,10 +1765,10 @@ function Index() {
                   </svg>
                 </span>
                 <span style={{ display: "flex", flexDirection: "column" }}>
-                  <strong style={{ fontWeight: "700", fontSize: "16px", color: "#004D25" }}>
+                  <strong style={{ fontWeight: "700", fontSize: "16px" }}>
                     Quem foi e quem pagou
                   </strong>
-                  <span style={{ fontSize: "15px", color: "#4A4A4A" }}>
+                  <span style={{ fontSize: "15px", color: "#4F5D55" }}>
                     O organizador marca a parte de cada um. O app não cobra nada.
                   </span>
                 </span>
@@ -1794,14 +1777,15 @@ function Index() {
                 <span
                   style={{
                     flex: "none",
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "12px",
-                    background: "#EBF8F1",
-                    color: "#004D25",
+                    width: "42px",
+                    height: "42px",
+                    borderRadius: "50%",
+                    background: "#FFFFFF",
+                    color: "#008A42",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    boxShadow: "0 6px 16px -10px rgba(0,168,80,0.6)",
                   }}
                 >
                   <svg
@@ -1819,10 +1803,8 @@ function Index() {
                   </svg>
                 </span>
                 <span style={{ display: "flex", flexDirection: "column" }}>
-                  <strong style={{ fontWeight: "700", fontSize: "16px", color: "#004D25" }}>
-                    Comentários
-                  </strong>
-                  <span style={{ fontSize: "15px", color: "#4A4A4A" }}>
+                  <strong style={{ fontWeight: "700", fontSize: "16px" }}>Comentários</strong>
+                  <span style={{ fontSize: "15px", color: "#4F5D55" }}>
                     A resenha fica guardada no próprio jogo.
                   </span>
                 </span>
@@ -1831,14 +1813,15 @@ function Index() {
                 <span
                   style={{
                     flex: "none",
-                    width: "40px",
-                    height: "40px",
-                    borderRadius: "12px",
-                    background: "#EBF8F1",
-                    color: "#004D25",
+                    width: "42px",
+                    height: "42px",
+                    borderRadius: "50%",
+                    background: "#FFFFFF",
+                    color: "#008A42",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    boxShadow: "0 6px 16px -10px rgba(0,168,80,0.6)",
                   }}
                 >
                   <svg
@@ -1856,10 +1839,10 @@ function Index() {
                   </svg>
                 </span>
                 <span style={{ display: "flex", flexDirection: "column" }}>
-                  <strong style={{ fontWeight: "700", fontSize: "16px", color: "#004D25" }}>
+                  <strong style={{ fontWeight: "700", fontSize: "16px" }}>
                     Avaliação da galera
                   </strong>
-                  <span style={{ fontSize: "15px", color: "#4A4A4A" }}>
+                  <span style={{ fontSize: "15px", color: "#4F5D55" }}>
                     Em até 24h, e é anônima.
                   </span>
                 </span>
@@ -1868,7 +1851,10 @@ function Index() {
           </div>
         </div>
       </section>
-      <section id="para-quem-e" style={{ background: "#FFFFFF" }}>
+      <section
+        id="para-quem-e"
+        style={{ background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)" }}
+      >
         <div
           style={{
             maxWidth: "1200px",
@@ -1876,18 +1862,30 @@ function Index() {
             padding: "clamp(64px, 8vw, 104px) clamp(16px, 5vw, 64px)",
             display: "flex",
             flexDirection: "column",
-            gap: "48px",
+            gap: "44px",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "760px" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "16px",
+              maxWidth: "760px",
+            }}
+          >
             <p
               style={{
                 margin: "0",
-                fontSize: "13px",
+                padding: "6px 14px",
+                borderRadius: "999px",
+                background: "#E6F6EE",
+                border: "1px solid #CDEBD8",
+                color: "#006B33",
+                fontSize: "12px",
                 fontWeight: "700",
-                letterSpacing: "0.14em",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#00A850",
               }}
             >
               Para quem é
@@ -1896,12 +1894,11 @@ function Index() {
               style={{
                 margin: "0",
                 fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "75%",
-                textTransform: "uppercase",
-                fontSize: "clamp(38px, 5.2vw, 64px)",
-                lineHeight: "0.95",
-                color: "#004D25",
+                fontWeight: "800",
+                fontSize: "clamp(32px, 4.2vw, 48px)",
+                lineHeight: "1.08",
+                letterSpacing: "-0.02em",
+                color: "#13201A",
               }}
             >
               Você entra pela porta que faz sentido para o seu jogo.
@@ -1919,18 +1916,19 @@ function Index() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "16px",
-                padding: "32px",
-                border: "1px solid #D5EBDE",
-                borderRadius: "12px",
+                padding: "30px",
+                borderRadius: "24px",
                 background: "#FFFFFF",
+                border: "1px solid #E3F1E8",
+                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
               }}
             >
               <span
                 style={{
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  width: "52px",
+                  height: "52px",
+                  borderRadius: "16px",
+                  background: "#00A850",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -1956,17 +1954,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "80%",
-                  textTransform: "uppercase",
-                  fontSize: "32px",
-                  lineHeight: "1",
-                  color: "#004D25",
+                  fontWeight: "800",
+                  fontSize: "26px",
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  color: "#13201A",
                 }}
               >
                 Jogador
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                 Quer jogar mais vezes na semana, com gente de confiança e sem ficar implorando
                 confirmação em grupo.
               </p>
@@ -2028,10 +2025,10 @@ function Index() {
                   justifyContent: "space-between",
                   gap: "10px",
                   minHeight: "48px",
-                  padding: "0 20px",
-                  borderRadius: "12px",
-                  border: "2px solid #004D25",
-                  color: "#004D25",
+                  padding: "0 22px",
+                  borderRadius: "999px",
+                  border: "1.5px solid #BFE3CC",
+                  color: "#006B33",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "16px",
@@ -2059,18 +2056,19 @@ function Index() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "16px",
-                padding: "32px",
-                border: "1px solid #D5EBDE",
-                borderRadius: "12px",
+                padding: "30px",
+                borderRadius: "24px",
                 background: "#FFFFFF",
+                border: "1px solid #E3F1E8",
+                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
               }}
             >
               <span
                 style={{
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  width: "52px",
+                  height: "52px",
+                  borderRadius: "16px",
+                  background: "#00A850",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -2096,17 +2094,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "80%",
-                  textTransform: "uppercase",
-                  fontSize: "32px",
-                  lineHeight: "1",
-                  color: "#004D25",
+                  fontWeight: "800",
+                  fontSize: "26px",
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  color: "#13201A",
                 }}
               >
                 Professor
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                 Coloque seus alunos na sua tribo: eles acham parceiros para treinar fora da aula,
                 evoluem mais rápido e ficam mais tempo com você.
               </p>
@@ -2168,10 +2165,10 @@ function Index() {
                   justifyContent: "space-between",
                   gap: "10px",
                   minHeight: "48px",
-                  padding: "0 20px",
-                  borderRadius: "12px",
-                  border: "2px solid #004D25",
-                  color: "#004D25",
+                  padding: "0 22px",
+                  borderRadius: "999px",
+                  border: "1.5px solid #BFE3CC",
+                  color: "#006B33",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "16px",
@@ -2199,18 +2196,19 @@ function Index() {
                 display: "flex",
                 flexDirection: "column",
                 gap: "16px",
-                padding: "32px",
-                border: "1px solid #D5EBDE",
-                borderRadius: "12px",
+                padding: "30px",
+                borderRadius: "24px",
                 background: "#FFFFFF",
+                border: "1px solid #E3F1E8",
+                boxShadow: "0 12px 30px -16px rgba(0,168,80,0.35)",
               }}
             >
               <span
                 style={{
-                  width: "48px",
-                  height: "48px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  width: "52px",
+                  height: "52px",
+                  borderRadius: "16px",
+                  background: "#00A850",
                   color: "#FFFFFF",
                   display: "flex",
                   alignItems: "center",
@@ -2237,17 +2235,16 @@ function Index() {
                 style={{
                   margin: "0",
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "80%",
-                  textTransform: "uppercase",
-                  fontSize: "32px",
-                  lineHeight: "1",
-                  color: "#004D25",
+                  fontWeight: "800",
+                  fontSize: "26px",
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  color: "#13201A",
                 }}
               >
                 Dono de quadra
               </h3>
-              <p style={{ margin: "0", fontSize: "16px", color: "#4A4A4A" }}>
+              <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                 Cadastre seus clientes e divulgue horários vagos direto para quem já quer jogar.
                 Horário ocioso vira quadra cheia.
               </p>
@@ -2309,10 +2306,10 @@ function Index() {
                   justifyContent: "space-between",
                   gap: "10px",
                   minHeight: "48px",
-                  padding: "0 20px",
-                  borderRadius: "12px",
-                  border: "2px solid #004D25",
-                  color: "#004D25",
+                  padding: "0 22px",
+                  borderRadius: "999px",
+                  border: "1.5px solid #BFE3CC",
+                  color: "#006B33",
                   textDecoration: "none",
                   fontWeight: "700",
                   fontSize: "16px",
@@ -2338,7 +2335,7 @@ function Index() {
           </div>
         </div>
       </section>
-      <section style={{ background: "#EBF8F1" }}>
+      <section style={{ background: "#FFFFFF" }}>
         <div
           style={{
             maxWidth: "1200px",
@@ -2346,18 +2343,30 @@ function Index() {
             padding: "clamp(64px, 8vw, 104px) clamp(16px, 5vw, 64px)",
             display: "flex",
             flexDirection: "column",
-            gap: "48px",
+            gap: "44px",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "760px" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "16px",
+              maxWidth: "760px",
+            }}
+          >
             <p
               style={{
                 margin: "0",
-                fontSize: "13px",
+                padding: "6px 14px",
+                borderRadius: "999px",
+                background: "#E6F6EE",
+                border: "1px solid #CDEBD8",
+                color: "#006B33",
+                fontSize: "12px",
                 fontWeight: "700",
-                letterSpacing: "0.14em",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#004D25",
               }}
             >
               Confiança
@@ -2366,17 +2375,26 @@ function Index() {
               style={{
                 margin: "0",
                 fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "75%",
-                textTransform: "uppercase",
-                fontSize: "clamp(38px, 5.2vw, 64px)",
-                lineHeight: "0.95",
-                color: "#004D25",
+                fontWeight: "800",
+                fontSize: "clamp(32px, 4.2vw, 48px)",
+                lineHeight: "1.08",
+                letterSpacing: "-0.02em",
+                color: "#13201A",
               }}
             >
-              Na quadra, palavra vale.
+              Na quadra,{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                palavra vale.
+              </span>
             </h2>
-            <p style={{ margin: "0", fontSize: "19px", color: "#4A4A4A" }}>
+            <p style={{ margin: "0", fontSize: "19px", color: "#4F5D55" }}>
               Marcar com quem você ainda não conhece fica mais fácil quando dá pra ver quem trouxe a
               pessoa e como ela costuma cumprir o combinado.
             </p>
@@ -2390,9 +2408,9 @@ function Index() {
                 flexDirection: "column",
                 gap: "20px",
                 padding: "clamp(24px, 4vw, 36px)",
-                borderRadius: "16px",
-                background: "#FFFFFF",
-                boxShadow: "0 2px 8px rgba(0,77,37,0.08)",
+                borderRadius: "28px",
+                background: "linear-gradient(180deg, #F5FBF7 0%, #FFFFFF 100%)",
+                border: "1px solid #DCEFE3",
               }}
             >
               <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
@@ -2401,14 +2419,15 @@ function Index() {
                     margin: "0",
                     fontFamily: "'Archivo', sans-serif",
                     fontWeight: "800",
-                    fontSize: "26px",
+                    fontSize: "24px",
                     lineHeight: "1.15",
-                    color: "#004D25",
+                    letterSpacing: "-0.02em",
+                    color: "#13201A",
                   }}
                 >
                   Selo de confiabilidade
                 </h3>
-                <p style={{ margin: "0", fontSize: "16px", color: "#4A4A4A" }}>
+                <p style={{ margin: "0", fontSize: "16px", color: "#4F5D55" }}>
                   Todo perfil mostra um destes selos, calculado pelos jogos de cada pessoa.
                 </p>
               </div>
@@ -2420,15 +2439,16 @@ function Index() {
                     alignItems: "center",
                     gap: "8px 14px",
                     padding: "14px 16px",
-                    border: "1px solid #E3EFE8",
-                    borderRadius: "12px",
+                    borderRadius: "16px",
+                    background: "#FFFFFF",
+                    border: "1px solid #E3F1E8",
                   }}
                 >
                   <span
                     style={{
                       flex: "none",
                       padding: "6px 12px",
-                      borderRadius: "20px",
+                      borderRadius: "999px",
                       background: "#EEF1F4",
                       color: "#2B3A4A",
                       fontSize: "14px",
@@ -2437,7 +2457,7 @@ function Index() {
                   >
                     Novo na comunidade
                   </span>
-                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4A4A4A" }}>
+                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D55" }}>
                     Ainda tem menos de 3 jogos.
                   </span>
                 </div>
@@ -2448,24 +2468,25 @@ function Index() {
                     alignItems: "center",
                     gap: "8px 14px",
                     padding: "14px 16px",
-                    border: "1px solid #E3EFE8",
-                    borderRadius: "12px",
+                    borderRadius: "16px",
+                    background: "#FFFFFF",
+                    border: "1px solid #E3F1E8",
                   }}
                 >
                   <span
                     style={{
                       flex: "none",
                       padding: "6px 12px",
-                      borderRadius: "20px",
-                      background: "rgba(0,168,80,0.14)",
-                      color: "#004D25",
+                      borderRadius: "999px",
+                      background: "#E6F6EE",
+                      color: "#006B33",
                       fontSize: "14px",
                       fontWeight: "700",
                     }}
                   >
                     Sempre confirma presença
                   </span>
-                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4A4A4A" }}>
+                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D55" }}>
                     Nenhuma falta e nenhum cancelamento em cima da hora.
                   </span>
                 </div>
@@ -2476,15 +2497,16 @@ function Index() {
                     alignItems: "center",
                     gap: "8px 14px",
                     padding: "14px 16px",
-                    border: "1px solid #E3EFE8",
-                    borderRadius: "12px",
+                    borderRadius: "16px",
+                    background: "#FFFFFF",
+                    border: "1px solid #E3F1E8",
                   }}
                 >
                   <span
                     style={{
                       flex: "none",
                       padding: "6px 12px",
-                      borderRadius: "20px",
+                      borderRadius: "999px",
                       background: "#FFF3D6",
                       color: "#7A4B00",
                       fontSize: "14px",
@@ -2493,7 +2515,7 @@ function Index() {
                   >
                     Geralmente confiável
                   </span>
-                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4A4A4A" }}>
+                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D55" }}>
                     Falhou em até 1 de cada 4 jogos.
                   </span>
                 </div>
@@ -2504,15 +2526,16 @@ function Index() {
                     alignItems: "center",
                     gap: "8px 14px",
                     padding: "14px 16px",
-                    border: "1px solid #E3EFE8",
-                    borderRadius: "12px",
+                    borderRadius: "16px",
+                    background: "#FFFFFF",
+                    border: "1px solid #E3F1E8",
                   }}
                 >
                   <span
                     style={{
                       flex: "none",
                       padding: "6px 12px",
-                      borderRadius: "20px",
+                      borderRadius: "999px",
                       background: "#FBE3E3",
                       color: "#A32020",
                       fontSize: "14px",
@@ -2521,7 +2544,7 @@ function Index() {
                   >
                     Histórico de faltas frequentes
                   </span>
-                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4A4A4A" }}>
+                  <span style={{ flex: "1 1 200px", fontSize: "15px", color: "#4F5D55" }}>
                     Falhou em mais de 1 de cada 4 jogos.
                   </span>
                 </div>
@@ -2534,7 +2557,7 @@ function Index() {
                   alignItems: "flex-start",
                   fontSize: "15px",
                   fontWeight: "600",
-                  color: "#004D25",
+                  color: "#006B33",
                 }}
               >
                 <svg
@@ -2571,9 +2594,10 @@ function Index() {
                   flexDirection: "column",
                   gap: "10px",
                   padding: "24px",
-                  borderRadius: "16px",
+                  borderRadius: "24px",
                   background: "#FFFFFF",
-                  boxShadow: "0 2px 8px rgba(0,77,37,0.08)",
+                  border: "1px solid #E3F1E8",
+                  boxShadow: "0 12px 30px -18px rgba(0,168,80,0.35)",
                 }}
               >
                 <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -2583,8 +2607,8 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#00A850",
-                      color: "#062E1A",
+                      background: "#E6F6EE",
+                      color: "#006B33",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -2596,22 +2620,23 @@ function Index() {
                   </span>
                   <span style={{ display: "flex", flexDirection: "column", lineHeight: "1.25" }}>
                     <strong style={{ fontWeight: "700" }}>Marina P.</strong>
-                    <span style={{ fontSize: "14px", color: "#6B6B6B" }}>convidada do Léo</span>
+                    <span style={{ fontSize: "14px", color: "#63716A" }}>convidada do Léo</span>
                   </span>
                 </div>
                 <h3
                   style={{
                     margin: "4px 0 0",
                     fontFamily: "'Archivo', sans-serif",
-                    fontWeight: "800",
-                    fontSize: "21px",
+                    fontWeight: "700",
+                    fontSize: "20px",
                     lineHeight: "1.2",
-                    color: "#004D25",
+                    letterSpacing: "-0.01em",
+                    color: "#13201A",
                   }}
                 >
                   Convite com nome
                 </h3>
-                <p style={{ margin: "0", fontSize: "15px", color: "#4A4A4A" }}>
+                <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
                   Quem entra por convite carrega o nome de quem trouxe. Isso cria compromisso dos
                   dois lados.
                 </p>
@@ -2623,24 +2648,26 @@ function Index() {
                   flexDirection: "column",
                   gap: "10px",
                   padding: "24px",
-                  borderRadius: "16px",
+                  borderRadius: "24px",
                   background: "#FFFFFF",
-                  boxShadow: "0 2px 8px rgba(0,77,37,0.08)",
+                  border: "1px solid #E3F1E8",
+                  boxShadow: "0 12px 30px -18px rgba(0,168,80,0.35)",
                 }}
               >
                 <h3
                   style={{
                     margin: "0",
                     fontFamily: "'Archivo', sans-serif",
-                    fontWeight: "800",
-                    fontSize: "21px",
+                    fontWeight: "700",
+                    fontSize: "20px",
                     lineHeight: "1.2",
-                    color: "#004D25",
+                    letterSpacing: "-0.01em",
+                    color: "#13201A",
                   }}
                 >
                   Avaliação da galera
                 </h3>
-                <p style={{ margin: "0", fontSize: "15px", color: "#4A4A4A" }}>
+                <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
                   Depois do jogo, você avalia quem jogou com você: habilidade, harmonia e se jogaria
                   de novo. É anônimo, e a média só aparece no perfil depois de 5 avaliações.
                 </p>
@@ -2652,24 +2679,26 @@ function Index() {
                   flexDirection: "column",
                   gap: "10px",
                   padding: "24px",
-                  borderRadius: "16px",
+                  borderRadius: "24px",
                   background: "#FFFFFF",
-                  boxShadow: "0 2px 8px rgba(0,77,37,0.08)",
+                  border: "1px solid #E3F1E8",
+                  boxShadow: "0 12px 30px -18px rgba(0,168,80,0.35)",
                 }}
               >
                 <h3
                   style={{
                     margin: "0",
                     fontFamily: "'Archivo', sans-serif",
-                    fontWeight: "800",
-                    fontSize: "21px",
+                    fontWeight: "700",
+                    fontSize: "20px",
                     lineHeight: "1.2",
-                    color: "#004D25",
+                    letterSpacing: "-0.01em",
+                    color: "#13201A",
                   }}
                 >
                   Aviso de nível
                 </h3>
-                <p style={{ margin: "0", fontSize: "15px", color: "#4A4A4A" }}>
+                <p style={{ margin: "0", fontSize: "15px", color: "#4F5D55" }}>
                   Cada jogo tem nível. Se ele estiver bem acima ou abaixo do seu, o app avisa antes
                   de você entrar, e a decisão continua sua.
                 </p>
@@ -2678,9 +2707,31 @@ function Index() {
           </div>
         </div>
       </section>
-      <section id="ranking" style={{ background: "#00A850", color: "#062E1A" }}>
+      <section
+        id="ranking"
+        style={{
+          position: "relative",
+          overflow: "hidden",
+          background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)",
+        }}
+      >
+        <img
+          className="decor"
+          src="/logos/simbolo-dekaw-verde.png"
+          alt=""
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            left: "-180px",
+            bottom: "-160px",
+            width: "520px",
+            height: "auto",
+            opacity: "0.05",
+          }}
+        />
         <div
           style={{
+            position: "relative",
             maxWidth: "1200px",
             margin: "0 auto",
             padding: "clamp(64px, 8vw, 104px) clamp(16px, 5vw, 64px)",
@@ -2697,17 +2748,21 @@ function Index() {
               display: "flex",
               flexDirection: "column",
               alignItems: "flex-start",
-              gap: "20px",
+              gap: "18px",
             }}
           >
             <p
               style={{
                 margin: "0",
-                fontSize: "13px",
+                padding: "6px 14px",
+                borderRadius: "999px",
+                background: "#E6F6EE",
+                border: "1px solid #CDEBD8",
+                color: "#006B33",
+                fontSize: "12px",
                 fontWeight: "700",
-                letterSpacing: "0.14em",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#062E1A",
               }}
             >
               Ranking
@@ -2716,17 +2771,26 @@ function Index() {
               style={{
                 margin: "0",
                 fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "75%",
-                textTransform: "uppercase",
-                fontSize: "clamp(38px, 5.2vw, 64px)",
-                lineHeight: "0.95",
-                color: "#062E1A",
+                fontWeight: "800",
+                fontSize: "clamp(32px, 4.2vw, 48px)",
+                lineHeight: "1.08",
+                letterSpacing: "-0.02em",
+                color: "#13201A",
               }}
             >
-              Quem move a tribo <span style={{ color: "#FFFFFF" }}>sobe de nível.</span>
+              Quem move a tribo{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                sobe de nível.
+              </span>
             </h2>
-            <p style={{ margin: "0", fontSize: "19px", color: "#062E1A" }}>
+            <p style={{ margin: "0", fontSize: "19px", color: "#4F5D55" }}>
               Organizou o jogo e juntou a galera? Ponto. Entrou em quadra? Ponto também. Os pontos
               levam você de Bronze a Lendário, e o ranking mostra quem faz o jogo acontecer.
             </p>
@@ -2734,20 +2798,20 @@ function Index() {
               <div
                 style={{
                   flex: "1 1 180px",
-                  padding: "18px 20px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  padding: "18px 22px",
+                  borderRadius: "20px",
+                  background: "linear-gradient(135deg, #006B33 0%, #008A42 60%, #00A850 100%)",
                   color: "#FFFFFF",
+                  boxShadow: "0 16px 34px -18px rgba(0,168,80,0.7)",
                 }}
               >
                 <div
                   style={{
                     fontFamily: "'Archivo', sans-serif",
-                    fontWeight: "900",
-                    fontStretch: "75%",
-                    fontSize: "52px",
+                    fontWeight: "800",
+                    fontSize: "48px",
                     lineHeight: "1",
-                    color: "#8BE3B0",
+                    letterSpacing: "-0.03em",
                   }}
                 >
                   +10
@@ -2757,20 +2821,20 @@ function Index() {
               <div
                 style={{
                   flex: "1 1 180px",
-                  padding: "18px 20px",
-                  borderRadius: "12px",
-                  background: "#004D25",
+                  padding: "18px 22px",
+                  borderRadius: "20px",
+                  background: "linear-gradient(135deg, #006B33 0%, #008A42 60%, #00A850 100%)",
                   color: "#FFFFFF",
+                  boxShadow: "0 16px 34px -18px rgba(0,168,80,0.7)",
                 }}
               >
                 <div
                   style={{
                     fontFamily: "'Archivo', sans-serif",
-                    fontWeight: "900",
-                    fontStretch: "75%",
-                    fontSize: "52px",
+                    fontWeight: "800",
+                    fontSize: "48px",
                     lineHeight: "1",
-                    color: "#8BE3B0",
+                    letterSpacing: "-0.03em",
                   }}
                 >
                   +2
@@ -2786,15 +2850,16 @@ function Index() {
                 width: "100%",
               }}
             >
-              <div style={{ padding: "14px 16px", borderRadius: "12px", background: "#FFFFFF" }}>
+              <div
+                style={{
+                  padding: "14px 16px",
+                  borderRadius: "16px",
+                  background: "#FFFFFF",
+                  border: "1px solid #E3F1E8",
+                }}
+              >
                 <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    fontWeight: "700",
-                    color: "#1A1A1A",
-                  }}
+                  style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: "700" }}
                 >
                   <span
                     style={{
@@ -2807,17 +2872,18 @@ function Index() {
                   ></span>
                   Bronze
                 </div>
-                <div style={{ fontSize: "14px", color: "#4A4A4A" }}>0 a 49 pts</div>
+                <div style={{ fontSize: "14px", color: "#4F5D55" }}>0 a 49 pts</div>
               </div>
-              <div style={{ padding: "14px 16px", borderRadius: "12px", background: "#FFFFFF" }}>
+              <div
+                style={{
+                  padding: "14px 16px",
+                  borderRadius: "16px",
+                  background: "#FFFFFF",
+                  border: "1px solid #E3F1E8",
+                }}
+              >
                 <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    fontWeight: "700",
-                    color: "#1A1A1A",
-                  }}
+                  style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: "700" }}
                 >
                   <span
                     style={{
@@ -2830,17 +2896,18 @@ function Index() {
                   ></span>
                   Prata
                 </div>
-                <div style={{ fontSize: "14px", color: "#4A4A4A" }}>50 a 149 pts</div>
+                <div style={{ fontSize: "14px", color: "#4F5D55" }}>50 a 149 pts</div>
               </div>
-              <div style={{ padding: "14px 16px", borderRadius: "12px", background: "#FFFFFF" }}>
+              <div
+                style={{
+                  padding: "14px 16px",
+                  borderRadius: "16px",
+                  background: "#FFFFFF",
+                  border: "1px solid #E3F1E8",
+                }}
+              >
                 <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    fontWeight: "700",
-                    color: "#1A1A1A",
-                  }}
+                  style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: "700" }}
                 >
                   <span
                     style={{
@@ -2853,17 +2920,18 @@ function Index() {
                   ></span>
                   Ouro
                 </div>
-                <div style={{ fontSize: "14px", color: "#4A4A4A" }}>150 a 349 pts</div>
+                <div style={{ fontSize: "14px", color: "#4F5D55" }}>150 a 349 pts</div>
               </div>
-              <div style={{ padding: "14px 16px", borderRadius: "12px", background: "#FFFFFF" }}>
+              <div
+                style={{
+                  padding: "14px 16px",
+                  borderRadius: "16px",
+                  background: "#FFFFFF",
+                  border: "1px solid #E3F1E8",
+                }}
+              >
                 <div
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    fontWeight: "700",
-                    color: "#1A1A1A",
-                  }}
+                  style={{ display: "flex", alignItems: "center", gap: "8px", fontWeight: "700" }}
                 >
                   <span
                     style={{
@@ -2872,13 +2940,13 @@ function Index() {
                       height: "12px",
                       boxSizing: "border-box",
                       borderRadius: "50%",
-                      background: "#004D25",
-                      border: "2px solid #00A850",
+                      background: "#00A850",
+                      border: "2px solid #006B33",
                     }}
                   ></span>
                   Lendário
                 </div>
-                <div style={{ fontSize: "14px", color: "#4A4A4A" }}>350 pts ou mais</div>
+                <div style={{ fontSize: "14px", color: "#4F5D55" }}>350 pts ou mais</div>
               </div>
             </div>
             <a
@@ -2890,13 +2958,14 @@ function Index() {
                 alignItems: "center",
                 gap: "10px",
                 minHeight: "52px",
-                padding: "0 24px",
-                borderRadius: "12px",
-                background: "#004D25",
+                padding: "0 26px",
+                borderRadius: "999px",
+                background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
                 color: "#FFFFFF",
                 textDecoration: "none",
                 fontWeight: "700",
                 fontSize: "17px",
+                boxShadow: "0 14px 30px -14px rgba(0,168,80,0.7)",
               }}
             >
               Começar a pontuar{" "}
@@ -2920,51 +2989,85 @@ function Index() {
             <div
               style={{
                 padding: "24px",
-                borderRadius: "16px",
+                borderRadius: "28px",
                 background: "#FFFFFF",
-                color: "#1A1A1A",
-                boxShadow: "0 24px 50px rgba(0,61,30,0.3)",
+                border: "1px solid #DCEFE3",
+                boxShadow: "0 30px 70px -26px rgba(0,168,80,0.45)",
               }}
             >
               <div
                 style={{
                   display: "flex",
                   justifyContent: "space-between",
-                  alignItems: "baseline",
+                  alignItems: "center",
                   gap: "12px",
                   paddingBottom: "14px",
-                  borderBottom: "1px solid #E3EFE8",
+                  borderBottom: "1px solid #E3F1E8",
                 }}
               >
                 <span
                   style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "10px",
                     fontFamily: "'Archivo', sans-serif",
                     fontWeight: "800",
                     fontSize: "22px",
-                    color: "#004D25",
+                    letterSpacing: "-0.02em",
+                    color: "#13201A",
                   }}
                 >
+                  <span
+                    style={{
+                      width: "36px",
+                      height: "36px",
+                      borderRadius: "12px",
+                      background: "#E6F6EE",
+                      color: "#008A42",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="8" r="6"></circle>
+                      <path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"></path>
+                    </svg>
+                  </span>
                   Ranking
                 </span>
-                <span style={{ fontSize: "13px", color: "#6B6B6B" }}>pontos acumulados</span>
+                <span style={{ fontSize: "13px", color: "#63716A" }}>pontos acumulados</span>
               </div>
-              <div style={{ display: "flex", flexDirection: "column" }}>
+              <div
+                style={{ display: "flex", flexDirection: "column", gap: "8px", marginTop: "14px" }}
+              >
                 <div
                   style={{
                     display: "flex",
                     alignItems: "center",
                     gap: "14px",
-                    padding: "14px 0",
-                    borderBottom: "1px solid #EEF6F1",
+                    padding: "12px 14px",
+                    borderRadius: "16px",
+                    background: "#E6F6EE",
                   }}
                 >
                   <span
                     style={{
-                      width: "28px",
+                      width: "24px",
                       fontFamily: "'Archivo', sans-serif",
-                      fontWeight: "900",
-                      fontSize: "26px",
-                      color: "#00A850",
+                      fontWeight: "800",
+                      fontSize: "24px",
+                      color: "#006B33",
                     }}
                   >
                     1
@@ -2975,8 +3078,8 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#00A850",
-                      color: "#062E1A",
+                      background: "#006B33",
+                      color: "#FFFFFF",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -3000,7 +3103,7 @@ function Index() {
                     <span
                       style={{
                         padding: "2px 8px",
-                        borderRadius: "20px",
+                        borderRadius: "999px",
                         background: "#FFF3D6",
                         color: "#7A4B00",
                         fontSize: "12px",
@@ -3014,8 +3117,8 @@ function Index() {
                     style={{
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
-                      fontSize: "20px",
-                      color: "#004D25",
+                      fontSize: "19px",
+                      color: "#006B33",
                     }}
                   >
                     186 pts
@@ -3026,17 +3129,18 @@ function Index() {
                     display: "flex",
                     alignItems: "center",
                     gap: "14px",
-                    padding: "14px 0",
-                    borderBottom: "1px solid #EEF6F1",
+                    padding: "12px 14px",
+                    borderRadius: "16px",
+                    background: "#F5FBF7",
                   }}
                 >
                   <span
                     style={{
-                      width: "28px",
+                      width: "24px",
                       fontFamily: "'Archivo', sans-serif",
-                      fontWeight: "900",
-                      fontSize: "26px",
-                      color: "#004D25",
+                      fontWeight: "800",
+                      fontSize: "24px",
+                      color: "#33413A",
                     }}
                   >
                     2
@@ -3047,8 +3151,8 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#004D25",
-                      color: "#FFFFFF",
+                      background: "#E6F6EE",
+                      color: "#006B33",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -3072,7 +3176,7 @@ function Index() {
                     <span
                       style={{
                         padding: "2px 8px",
-                        borderRadius: "20px",
+                        borderRadius: "999px",
                         background: "#EEF1F4",
                         color: "#2B3A4A",
                         fontSize: "12px",
@@ -3086,8 +3190,8 @@ function Index() {
                     style={{
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
-                      fontSize: "20px",
-                      color: "#004D25",
+                      fontSize: "19px",
+                      color: "#13201A",
                     }}
                   >
                     142 pts
@@ -3098,17 +3202,18 @@ function Index() {
                     display: "flex",
                     alignItems: "center",
                     gap: "14px",
-                    padding: "14px 0",
-                    borderBottom: "1px solid #EEF6F1",
+                    padding: "12px 14px",
+                    borderRadius: "16px",
+                    background: "#F5FBF7",
                   }}
                 >
                   <span
                     style={{
-                      width: "28px",
+                      width: "24px",
                       fontFamily: "'Archivo', sans-serif",
-                      fontWeight: "900",
-                      fontSize: "26px",
-                      color: "#004D25",
+                      fontWeight: "800",
+                      fontSize: "24px",
+                      color: "#33413A",
                     }}
                   >
                     3
@@ -3119,8 +3224,8 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#DDF2E6",
-                      color: "#004D25",
+                      background: "#E6F6EE",
+                      color: "#006B33",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -3144,7 +3249,7 @@ function Index() {
                     <span
                       style={{
                         padding: "2px 8px",
-                        borderRadius: "20px",
+                        borderRadius: "999px",
                         background: "#EEF1F4",
                         color: "#2B3A4A",
                         fontSize: "12px",
@@ -3158,23 +3263,30 @@ function Index() {
                     style={{
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
-                      fontSize: "20px",
-                      color: "#004D25",
+                      fontSize: "19px",
+                      color: "#13201A",
                     }}
                   >
                     98 pts
                   </span>
                 </div>
                 <div
-                  style={{ display: "flex", alignItems: "center", gap: "14px", padding: "14px 0" }}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "14px",
+                    padding: "12px 14px",
+                    borderRadius: "16px",
+                    background: "#F5FBF7",
+                  }}
                 >
                   <span
                     style={{
-                      width: "28px",
+                      width: "24px",
                       fontFamily: "'Archivo', sans-serif",
-                      fontWeight: "900",
-                      fontSize: "26px",
-                      color: "#004D25",
+                      fontWeight: "800",
+                      fontSize: "24px",
+                      color: "#33413A",
                     }}
                   >
                     4
@@ -3185,8 +3297,8 @@ function Index() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      background: "#DDF2E6",
-                      color: "#004D25",
+                      background: "#E6F6EE",
+                      color: "#006B33",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -3210,7 +3322,7 @@ function Index() {
                     <span
                       style={{
                         padding: "2px 8px",
-                        borderRadius: "20px",
+                        borderRadius: "999px",
                         background: "#F6E7DA",
                         color: "#7A3E12",
                         fontSize: "12px",
@@ -3224,15 +3336,15 @@ function Index() {
                     style={{
                       fontFamily: "'Archivo', sans-serif",
                       fontWeight: "800",
-                      fontSize: "20px",
-                      color: "#004D25",
+                      fontSize: "19px",
+                      color: "#13201A",
                     }}
                   >
                     46 pts
                   </span>
                 </div>
               </div>
-              <p style={{ margin: "8px 0 0", fontSize: "13px", color: "#6B6B6B" }}>
+              <p style={{ margin: "12px 0 0", fontSize: "13px", color: "#63716A" }}>
                 Exemplo ilustrativo, dados fictícios.
               </p>
             </div>
@@ -3247,18 +3359,30 @@ function Index() {
             padding: "clamp(64px, 8vw, 104px) clamp(16px, 5vw, 64px)",
             display: "flex",
             flexDirection: "column",
-            gap: "48px",
+            gap: "44px",
           }}
         >
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px", maxWidth: "760px" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "flex-start",
+              gap: "16px",
+              maxWidth: "760px",
+            }}
+          >
             <p
               style={{
                 margin: "0",
-                fontSize: "13px",
+                padding: "6px 14px",
+                borderRadius: "999px",
+                background: "#E6F6EE",
+                border: "1px solid #CDEBD8",
+                color: "#006B33",
+                fontSize: "12px",
                 fontWeight: "700",
-                letterSpacing: "0.14em",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
-                color: "#00A850",
               }}
             >
               Como a galera usa
@@ -3267,12 +3391,11 @@ function Index() {
               style={{
                 margin: "0",
                 fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "75%",
-                textTransform: "uppercase",
-                fontSize: "clamp(38px, 5.2vw, 64px)",
-                lineHeight: "0.95",
-                color: "#004D25",
+                fontWeight: "800",
+                fontSize: "clamp(32px, 4.2vw, 48px)",
+                lineHeight: "1.08",
+                letterSpacing: "-0.02em",
+                color: "#13201A",
               }}
             >
               Gente jogando mais, quadra mais cheia.
@@ -3292,24 +3415,24 @@ function Index() {
                 alignItems: "flex-start",
                 gap: "14px",
                 padding: "28px",
-                borderRadius: "12px",
-                background: "#EBF8F1",
+                borderRadius: "24px",
+                background: "#F5FBF7",
+                border: "1px solid #E3F1E8",
               }}
             >
               <span
                 style={{
                   padding: "5px 12px",
-                  borderRadius: "20px",
-                  background: "#004D25",
-                  color: "#FFFFFF",
+                  borderRadius: "999px",
+                  background: "#E6F6EE",
+                  color: "#006B33",
                   fontSize: "13px",
                   fontWeight: "700",
-                  letterSpacing: "0.04em",
                 }}
               >
                 Jogador
               </span>
-              <p style={{ margin: "0", fontSize: "19px", lineHeight: "1.45", color: "#1A1A1A" }}>
+              <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.5", color: "#13201A" }}>
                 Convidado por um amigo, virou jogo fixo em duas semanas e nunca mais ficou sem
                 dupla.
               </p>
@@ -3321,24 +3444,24 @@ function Index() {
                 alignItems: "flex-start",
                 gap: "14px",
                 padding: "28px",
-                borderRadius: "12px",
-                background: "#EBF8F1",
+                borderRadius: "24px",
+                background: "#F5FBF7",
+                border: "1px solid #E3F1E8",
               }}
             >
               <span
                 style={{
                   padding: "5px 12px",
-                  borderRadius: "20px",
-                  background: "#004D25",
-                  color: "#FFFFFF",
+                  borderRadius: "999px",
+                  background: "#E6F6EE",
+                  color: "#006B33",
                   fontSize: "13px",
                   fontWeight: "700",
-                  letterSpacing: "0.04em",
                 }}
               >
                 Professor
               </span>
-              <p style={{ margin: "0", fontSize: "19px", lineHeight: "1.45", color: "#1A1A1A" }}>
+              <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.5", color: "#13201A" }}>
                 Professor coloca os alunos pra treinarem entre si fora da aula: a evolução acelera e
                 ninguém abandona o esporte.
               </p>
@@ -3350,24 +3473,24 @@ function Index() {
                 alignItems: "flex-start",
                 gap: "14px",
                 padding: "28px",
-                borderRadius: "12px",
-                background: "#EBF8F1",
+                borderRadius: "24px",
+                background: "#F5FBF7",
+                border: "1px solid #E3F1E8",
               }}
             >
               <span
                 style={{
                   padding: "5px 12px",
-                  borderRadius: "20px",
-                  background: "#004D25",
-                  color: "#FFFFFF",
+                  borderRadius: "999px",
+                  background: "#E6F6EE",
+                  color: "#006B33",
                   fontSize: "13px",
                   fontWeight: "700",
-                  letterSpacing: "0.04em",
                 }}
               >
                 Dono de arena
               </span>
-              <p style={{ margin: "0", fontSize: "19px", lineHeight: "1.45", color: "#1A1A1A" }}>
+              <p style={{ margin: "0", fontSize: "18px", lineHeight: "1.5", color: "#13201A" }}>
                 Dono de arena divulga o horário vago direto na tribo: o período que era morto vira o
                 mais disputado.
               </p>
@@ -3375,275 +3498,282 @@ function Index() {
           </div>
         </div>
       </section>
-      <section id="loja" style={{ background: "#EBF8F1" }}>
+      <section
+        id="loja"
+        style={{ background: "linear-gradient(180deg, #EEF9F2 0%, #FFFFFF 100%)" }}
+      >
         <div
           style={{
             maxWidth: "1200px",
             margin: "0 auto",
             padding: "clamp(64px, 8vw, 104px) clamp(16px, 5vw, 64px)",
             display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            gap: "48px",
+            flexDirection: "column",
+            gap: "20px",
           }}
         >
           <div
             style={{
-              flex: "1 1 520px",
-              minWidth: "0",
               display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-              gap: "18px",
+              flexWrap: "wrap",
+              alignItems: "stretch",
+              gap: "0",
+              borderRadius: "32px",
+              overflow: "hidden",
+              background: "#FFFFFF",
+              border: "1px solid #DCEFE3",
+              boxShadow: "0 24px 60px -30px rgba(0,168,80,0.45)",
             }}
           >
-            <p
+            <div
               style={{
-                margin: "0",
-                fontSize: "13px",
-                fontWeight: "700",
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                color: "#004D25",
-              }}
-            >
-              Ecossistema Dekaw
-            </p>
-            <h2
-              style={{
-                margin: "0",
-                fontFamily: "'Archivo', sans-serif",
-                fontWeight: "900",
-                fontStretch: "75%",
-                textTransform: "uppercase",
-                fontSize: "clamp(36px, 4.6vw, 56px)",
-                lineHeight: "0.95",
-                color: "#004D25",
-              }}
-            >
-              O clube é da tribo. A loja está aqui quando a raquete pedir.
-            </h2>
-            <p style={{ margin: "0", fontSize: "18px", color: "#4A4A4A" }}>
-              O Dekaw nasceu dentro da loja Dekaw, representante oficial HEAD no Brasil para beach
-              tennis, padel, squash e pickleball. Por isso o app é e continua gratuito: quem joga
-              mais evolui mais. E quando chega a hora de trocar a raquete, o overgrip ou a bolsa,
-              você já sabe quem entende do seu jogo.
-            </p>
-            <a
-              className="btn"
-              href="https://www.dekaw.com.br"
-              style={{
-                marginTop: "4px",
-                display: "inline-flex",
+                flex: "1 1 380px",
+                minWidth: "0",
+                minHeight: "260px",
+                display: "flex",
                 alignItems: "center",
-                gap: "10px",
-                minHeight: "52px",
-                padding: "0 22px",
-                borderRadius: "12px",
-                border: "2px solid #004D25",
-                color: "#004D25",
-                textDecoration: "none",
-                fontWeight: "700",
-                fontSize: "17px",
+                justifyContent: "center",
+                padding: "40px",
+                background: "#00A850",
               }}
             >
-              Conhecer a loja Dekaw{" "}
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
+              <img
+                src="/logos/logo-dekaw-branco.png"
+                alt="DEKAW, Você Dono da Bola"
+                style={{ display: "block", width: "100%", maxWidth: "380px", height: "auto" }}
+              />
+            </div>
+            <div
+              style={{
+                flex: "1.3 1 420px",
+                minWidth: "0",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "16px",
+                padding: "clamp(28px, 4vw, 48px)",
+              }}
+            >
+              <p
+                style={{
+                  margin: "0",
+                  padding: "6px 14px",
+                  borderRadius: "999px",
+                  background: "#E6F6EE",
+                  border: "1px solid #CDEBD8",
+                  color: "#006B33",
+                  fontSize: "12px",
+                  fontWeight: "700",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                }}
               >
-                <path d="M5 12h14"></path>
-                <path d="m12 5 7 7-7 7"></path>
-              </svg>
-            </a>
+                Ecossistema Dekaw
+              </p>
+              <h2
+                style={{
+                  margin: "0",
+                  fontFamily: "'Archivo', sans-serif",
+                  fontWeight: "800",
+                  fontSize: "clamp(28px, 3.4vw, 40px)",
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  color: "#13201A",
+                }}
+              >
+                O clube é da tribo. A loja está aqui quando a raquete pedir.
+              </h2>
+              <p style={{ margin: "0", fontSize: "17px", color: "#4F5D55" }}>
+                O Dekaw nasceu dentro da loja Dekaw, representante oficial HEAD no Brasil para beach
+                tennis, padel, squash e pickleball. Por isso o app é e continua gratuito: quem joga
+                mais evolui mais. E quando chega a hora de trocar a raquete, o overgrip ou a bolsa,
+                você já sabe quem entende do seu jogo.
+              </p>
+              <a
+                className="btn"
+                href="https://www.dekaw.com.br"
+                style={{
+                  marginTop: "4px",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  minHeight: "50px",
+                  padding: "0 24px",
+                  borderRadius: "999px",
+                  border: "1.5px solid #BFE3CC",
+                  color: "#006B33",
+                  textDecoration: "none",
+                  fontWeight: "700",
+                  fontSize: "16px",
+                }}
+              >
+                Conhecer a loja Dekaw{" "}
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14"></path>
+                  <path d="m12 5 7 7-7 7"></path>
+                </svg>
+              </a>
+            </div>
           </div>
           <div
             style={{
-              flex: "1 1 340px",
-              minWidth: "0",
               display: "grid",
-              gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
               gap: "12px",
             }}
           >
-            <div style={{ padding: "20px", borderRadius: "12px", background: "#FFFFFF" }}>
+            <div
+              style={{
+                padding: "20px 22px",
+                borderRadius: "20px",
+                background: "#FFFFFF",
+                border: "1px solid #E3F1E8",
+              }}
+            >
               <div
                 style={{
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "78%",
-                  textTransform: "uppercase",
-                  fontSize: "28px",
-                  lineHeight: "1",
-                  color: "#00A850",
+                  fontWeight: "800",
+                  fontSize: "24px",
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  color: "#006B33",
                 }}
               >
                 Grátis
               </div>
-              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4A4A4A" }}>
+              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D55" }}>
                 O app é e continua gratuito.
               </div>
             </div>
-            <div style={{ padding: "20px", borderRadius: "12px", background: "#FFFFFF" }}>
+            <div
+              style={{
+                padding: "20px 22px",
+                borderRadius: "20px",
+                background: "#FFFFFF",
+                border: "1px solid #E3F1E8",
+              }}
+            >
               <div
                 style={{
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "78%",
-                  textTransform: "uppercase",
-                  fontSize: "28px",
-                  lineHeight: "1",
-                  color: "#00A850",
+                  fontWeight: "800",
+                  fontSize: "24px",
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  color: "#006B33",
                 }}
               >
                 Sem anúncio
               </div>
-              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4A4A4A" }}>
+              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D55" }}>
                 Nada de propaganda no meio do jogo.
               </div>
             </div>
-            <div style={{ padding: "20px", borderRadius: "12px", background: "#FFFFFF" }}>
+            <div
+              style={{
+                padding: "20px 22px",
+                borderRadius: "20px",
+                background: "#FFFFFF",
+                border: "1px solid #E3F1E8",
+              }}
+            >
               <div
                 style={{
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "78%",
-                  textTransform: "uppercase",
-                  fontSize: "28px",
-                  lineHeight: "1",
-                  color: "#00A850",
+                  fontWeight: "800",
+                  fontSize: "24px",
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  color: "#006B33",
                 }}
               >
                 Sem cobrança
               </div>
-              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4A4A4A" }}>
+              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D55" }}>
                 O valor da quadra é combinado entre a galera.
               </div>
             </div>
-            <div style={{ padding: "20px", borderRadius: "12px", background: "#FFFFFF" }}>
+            <div
+              style={{
+                padding: "20px 22px",
+                borderRadius: "20px",
+                background: "#FFFFFF",
+                border: "1px solid #E3F1E8",
+              }}
+            >
               <div
                 style={{
                   fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "78%",
-                  textTransform: "uppercase",
-                  fontSize: "28px",
-                  lineHeight: "1",
-                  color: "#00A850",
+                  fontWeight: "800",
+                  fontSize: "24px",
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  color: "#006B33",
                 }}
               >
                 5 esportes
               </div>
-              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4A4A4A" }}>
+              <div style={{ marginTop: "6px", fontSize: "14px", color: "#4F5D55" }}>
                 Beach tennis, padel, squash, pickleball e tênis.
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section
-        style={{
-          position: "relative",
-          overflow: "hidden",
-          background: "#004D25",
-          color: "#FFFFFF",
-        }}
-      >
-        <div
-          className="court-decor"
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            left: "50%",
-            top: "-200px",
-            width: "900px",
-            height: "1100px",
-            marginLeft: "-450px",
-            border: "3px solid rgba(255,255,255,0.08)",
-          }}
-        >
-          <div
-            style={{
-              position: "absolute",
-              left: "0",
-              right: "0",
-              top: "50%",
-              borderTop: "4px solid rgba(0,168,80,0.5)",
-            }}
-          ></div>
-          <div
-            style={{
-              position: "absolute",
-              left: "0",
-              right: "0",
-              top: "22%",
-              borderTop: "3px solid rgba(255,255,255,0.08)",
-            }}
-          ></div>
-          <div
-            style={{
-              position: "absolute",
-              left: "0",
-              right: "0",
-              top: "78%",
-              borderTop: "3px solid rgba(255,255,255,0.08)",
-            }}
-          ></div>
-        </div>
+      <section style={{ background: "linear-gradient(180deg, #FFFFFF 0%, #EEF9F2 100%)" }}>
         <div
           style={{
-            position: "relative",
-            maxWidth: "1000px",
+            maxWidth: "980px",
             margin: "0 auto",
-            padding: "clamp(72px, 9vw, 120px) clamp(16px, 5vw, 64px)",
+            padding: "clamp(64px, 8vw, 112px) clamp(16px, 5vw, 64px)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            gap: "24px",
+            gap: "22px",
             textAlign: "center",
           }}
         >
-          <p
-            style={{
-              margin: "0",
-              fontSize: "13px",
-              fontWeight: "700",
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              color: "#8BE3B0",
-            }}
-          >
-            Grátis · sem anúncios
-          </p>
+          <img
+            src="/logos/simbolo-dekaw-verde.png"
+            alt=""
+            aria-hidden="true"
+            style={{ display: "block", width: "64px", height: "64px" }}
+          />
           <h2
             style={{
               margin: "0",
               fontFamily: "'Archivo', sans-serif",
-              fontWeight: "900",
-              fontStretch: "72%",
-              textTransform: "uppercase",
-              fontSize: "clamp(44px, 7vw, 88px)",
-              lineHeight: "0.9",
-              color: "#FFFFFF",
+              fontWeight: "800",
+              fontSize: "clamp(36px, 5.4vw, 64px)",
+              lineHeight: "1.04",
+              letterSpacing: "-0.025em",
+              color: "#13201A",
             }}
           >
-            A tribo já está jogando. <span style={{ color: "#00A850" }}>Falta você em quadra.</span>
+            A tribo já está jogando.{" "}
+            <span
+              style={{
+                background: "linear-gradient(90deg, #006B33 0%, #00A850 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                color: "transparent",
+              }}
+            >
+              Falta você em quadra.
+            </span>
           </h2>
-          <p
-            style={{
-              margin: "0",
-              maxWidth: "36em",
-              fontSize: "19px",
-              color: "rgba(255,255,255,0.88)",
-            }}
-          >
+          <p style={{ margin: "0", maxWidth: "36em", fontSize: "19px", color: "#4F5D55" }}>
             Crie sua conta e entre numa tribo, ou monte a sua e chame a galera. Recebeu um convite?
             Abra o link que te mandaram: ele te leva direto pra tribo certa.
           </p>
@@ -3656,13 +3786,14 @@ function Index() {
                 alignItems: "center",
                 gap: "10px",
                 minHeight: "52px",
-                padding: "0 24px",
-                borderRadius: "12px",
-                background: "#00A850",
-                color: "#062E1A",
+                padding: "0 26px",
+                borderRadius: "999px",
+                background: "linear-gradient(135deg, #006B33 0%, #008A42 55%, #00A850 100%)",
+                color: "#FFFFFF",
                 textDecoration: "none",
                 fontWeight: "700",
                 fontSize: "17px",
+                boxShadow: "0 14px 30px -14px rgba(0,168,80,0.7)",
               }}
             >
               Criar minha conta{" "}
@@ -3688,73 +3819,78 @@ function Index() {
                 display: "inline-flex",
                 alignItems: "center",
                 minHeight: "52px",
-                padding: "0 22px",
-                borderRadius: "12px",
-                border: "2px solid rgba(255,255,255,0.6)",
-                color: "#FFFFFF",
+                padding: "0 24px",
+                borderRadius: "999px",
+                border: "1.5px solid #BFE3CC",
+                background: "#FFFFFF",
+                color: "#006B33",
                 textDecoration: "none",
-                fontWeight: "600",
+                fontWeight: "700",
                 fontSize: "17px",
               }}
             >
               Já tenho conta
             </a>
           </div>
-          <p style={{ margin: "0", fontSize: "14px", color: "rgba(255,255,255,0.75)" }}>
-            Funciona no navegador do celular. App Android em breve.
+          <p style={{ margin: "0", fontSize: "14px", color: "#63716A" }}>
+            Grátis e sem anúncios. Funciona no navegador do celular. App Android em breve.
           </p>
         </div>
       </section>
-      <footer style={{ background: "#003D1E", color: "rgba(255,255,255,0.78)", fontSize: "15px" }}>
+      <footer style={{ background: "#FFFFFF" }}>
+        <div style={{ position: "relative", overflow: "hidden", background: "#00A850" }}>
+          <img
+            className="decor"
+            src="/logos/simbolo-dekaw-branco.png"
+            alt=""
+            aria-hidden="true"
+            style={{
+              position: "absolute",
+              right: "-90px",
+              top: "-110px",
+              width: "420px",
+              height: "auto",
+              opacity: "0.12",
+            }}
+          />
+          <div
+            style={{
+              position: "relative",
+              maxWidth: "1200px",
+              margin: "0 auto",
+              padding: "48px clamp(16px, 5vw, 64px)",
+            }}
+          >
+            <img
+              src="/logos/logo-dekaw-branco.png"
+              alt="DEKAW, Você Dono da Bola"
+              style={{ display: "block", width: "min(100%, 360px)", height: "auto" }}
+            />
+          </div>
+        </div>
         <div
           style={{
             maxWidth: "1200px",
             margin: "0 auto",
-            padding: "44px clamp(16px, 5vw, 64px) 32px",
+            padding: "32px clamp(16px, 5vw, 64px) 24px",
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "space-between",
-            gap: "32px",
+            gap: "24px",
+            color: "#4F5D55",
+            fontSize: "15px",
           }}
         >
-          <div
-            style={{
-              flex: "1 1 280px",
-              minWidth: "0",
-              display: "flex",
-              flexDirection: "column",
-              gap: "8px",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "baseline", gap: "10px" }}>
-              <span
-                style={{
-                  fontFamily: "'Archivo', sans-serif",
-                  fontWeight: "900",
-                  fontStretch: "118%",
-                  fontSize: "22px",
-                  letterSpacing: "0.03em",
-                  color: "#FFFFFF",
-                }}
-              >
-                DEKAW
-              </span>
-              <span style={{ fontSize: "13px", fontWeight: "600", color: "#8BE3B0" }}>
-                Donos da Bola
-              </span>
-            </div>
-            <span>Você Dono da Bola.</span>
-            <span style={{ fontSize: "14px", color: "rgba(255,255,255,0.68)" }}>
-              Representante oficial HEAD no Brasil · Curitiba, PR
-            </span>
-          </div>
+          <span style={{ flex: "1 1 260px", minWidth: "0" }}>
+            Representante oficial HEAD no Brasil · Curitiba, PR
+          </span>
           <nav
             aria-label="Links do rodapé"
             style={{
-              flex: "2 1 480px",
+              flex: "2 1 520px",
               minWidth: "0",
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 180px), 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 170px), 1fr))",
               gap: "0 24px",
             }}
           >
@@ -3765,7 +3901,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "rgba(255,255,255,0.88)",
+                color: "#33413A",
                 textDecoration: "none",
               }}
             >
@@ -3778,7 +3914,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "rgba(255,255,255,0.88)",
+                color: "#33413A",
                 textDecoration: "none",
               }}
             >
@@ -3791,7 +3927,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "rgba(255,255,255,0.88)",
+                color: "#33413A",
                 textDecoration: "none",
               }}
             >
@@ -3804,7 +3940,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "rgba(255,255,255,0.88)",
+                color: "#33413A",
                 textDecoration: "none",
               }}
             >
@@ -3817,7 +3953,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "rgba(255,255,255,0.88)",
+                color: "#33413A",
                 textDecoration: "none",
               }}
             >
@@ -3830,7 +3966,7 @@ function Index() {
                 display: "flex",
                 alignItems: "center",
                 minHeight: "44px",
-                color: "rgba(255,255,255,0.88)",
+                color: "#33413A",
                 textDecoration: "none",
               }}
             >
@@ -3838,14 +3974,14 @@ function Index() {
             </a>
           </nav>
         </div>
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.12)" }}>
+        <div style={{ borderTop: "1px solid #E3F1E8" }}>
           <div
             style={{
               maxWidth: "1200px",
               margin: "0 auto",
               padding: "16px clamp(16px, 5vw, 64px)",
               fontSize: "13px",
-              color: "rgba(255,255,255,0.65)",
+              color: "#63716A",
             }}
           >
             © 2026 DEKAW

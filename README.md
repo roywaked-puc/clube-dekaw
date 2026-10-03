@@ -10,10 +10,11 @@ Projeto Lovable (TanStack Start + Vite). A página inteira está em
 `src/styles.css`; título, fontes e meta tags gerais em
 `src/routes/__root.tsx`.
 
-## Versão 2 (03/10/2026)
+## Versão 3 (03/10/2026)
 
-Refeita do zero pra bater com o que o app faz hoje. Antes de mudar a copy,
-conferir com a BÍBLIA do app.
+Refeita do zero pra bater com o que o app faz hoje. A versão 3 manteve o
+conteúdo da 2 e trocou o visual: mais leve, como a página antiga, com a logo
+DEKAW. Antes de mudar a copy, conferir com a BÍBLIA do app.
 
 **O que a página pode prometer:**
 
@@ -49,9 +50,21 @@ quadra).
 
 ## Marca
 
-- Cores: só verdes DEKAW. `#00A850` (verde), `#004D25` (verde escuro),
-  `#EBF8F1` (fundo verde-claro), `#062E1A` (texto sobre o verde),
-  `#8BE3B0` (texto pequeno sobre o verde escuro). Sem preto, nunca roxo.
+- Cor principal: `#00A850`, o mesmo verde do app (decisão de 03/10/2026).
+  Os arquivos originais da logo vêm em `#00AB84`; no site a logo foi
+  aplicada em `#00A850`.
+- Apoio: `#006B33` (texto pequeno verde e início do degradê dos botões),
+  `#E6F6EE` (etiquetas), `#EEF9F2` → branco (degradê dos fundos), `#13201A`
+  (títulos), `#4F5D55` (texto). Branco sobre `#00A850` só em logo, ícone e
+  área grande: letra pequena não tem contraste suficiente.
+- Visual leve: fundo branco e verde-claro, botões em pílula, cantos
+  arredondados, nenhuma seção escura. Nunca preto como fundo, nunca roxo.
+- Logos em `public/logos/`: logo completa (com o slogan) verde e branca,
+  símbolo verde e branco. A logo completa vai no menu, na seção da loja e
+  na faixa verde do rodapé.
+- Ícone da aba: `public/favicon.ico`, `public/icon-512.png`,
+  `public/apple-touch-icon.png`. Imagem de compartilhamento:
+  `public/og-dekaw.png` (1200×630).
 - Fontes: Archivo (títulos) e Instrument Sans (texto).
 - Nome: "DEKAW · Donos da Bola" (igual à Play Store). Slogan: "Você Dono da
   Bola".
@@ -60,8 +73,6 @@ quadra).
 
 ## Pendências
 
-- Imagem de compartilhamento (`og:image`, 1200×630). A antiga era um print
-  de preview do Lovable e foi removida.
 - Confirmar se o app tem lista de histórico de partidas (card "Jogador":
   "Seus jogos e pontos no perfil").
 
