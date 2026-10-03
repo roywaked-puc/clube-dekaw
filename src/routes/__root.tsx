@@ -1,5 +1,12 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Outlet, Link, createRootRouteWithContext, useRouter, HeadContent, Scripts } from "@tanstack/react-router";
+import {
+  Outlet,
+  Link,
+  createRootRouteWithContext,
+  useRouter,
+  HeadContent,
+  Scripts,
+} from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
@@ -10,16 +17,16 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">Essa bola saiu da quadra</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
+          A página que você procurou não existe ou mudou de lugar.
         </p>
         <div className="mt-6">
           <Link
             to="/"
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Go home
+            Voltar pro início
           </Link>
         </div>
       </div>
@@ -37,9 +44,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">This page didn't load</h1>
+        <h1 className="text-xl font-semibold tracking-tight text-foreground">
+          A página não carregou
+        </h1>
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Deu algum problema do nosso lado. Tente de novo ou volte pro início.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
@@ -49,13 +58,13 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
             }}
             className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Try again
+            Tentar de novo
           </button>
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
           >
-            Go home
+            Voltar pro início
           </a>
         </div>
       </div>
@@ -68,38 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "DEKAW — Você Dono da Bola" },
+      { title: "DEKAW · Donos da Bola" },
       {
         name: "description",
         content:
-          "Organize partidas de beach tennis, padel, squash, pickleball e tênis com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
+          "Organize jogos de beach tennis, padel, squash, pickleball e tênis com a sua tribo. Você chama a galera e o jogo acontece. Grátis e sem anúncios.",
       },
-      { name: "author", content: "Dekaw" },
-      { property: "og:title", content: "DEKAW — Você Dono da Bola" },
-      {
-        property: "og:description",
-        content:
-          "Organize partidas de beach tennis, padel, squash, pickleball e tênis com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "DEKAW — Você Dono da Bola" },
-      {
-        name: "twitter:description",
-        content:
-          "Organize partidas de beach tennis, padel, squash, pickleball e tênis com segurança: tribos por convite, chat interno e ranking com prêmios Dekaw.",
-      },
-      {
-        property: "og:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7dc2dd2-0b5b-4a13-9f8b-a284a36d41d6/id-preview-881c48ef--69757e71-a7cf-48c2-8af8-3bf1ecfc2f5f.lovable.app-1785549214907.png",
-      },
-      {
-        name: "twitter:image",
-        content:
-          "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b7dc2dd2-0b5b-4a13-9f8b-a284a36d41d6/id-preview-881c48ef--69757e71-a7cf-48c2-8af8-3bf1ecfc2f5f.lovable.app-1785549214907.png",
-      },
+      { name: "author", content: "DEKAW" },
+      { name: "theme-color", content: "#00A850" },
+      { property: "og:site_name", content: "DEKAW · Donos da Bola" },
+      { property: "og:locale", content: "pt_BR" },
     ],
     links: [
       {
@@ -110,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Instrument+Sans:wght@400..700&display=swap",
       },
     ],
   }),
@@ -122,7 +109,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>
